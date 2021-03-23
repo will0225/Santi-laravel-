@@ -13,55 +13,55 @@
 		<title> @yield('title') </title>
 
 		<!-- Favicon -->
-		<link rel="icon" href="../assets/img/brand/favicon.png" type="image/x-icon"/>
+		<link rel="icon" href="../../assets/img/brand/favicon.png" type="image/x-icon"/>
 
 
 		<!-- Icons css -->
-		<link href="../assets/css/icons.css" rel="stylesheet">
+		<link href="../../assets/css/icons.css" rel="stylesheet">
 
          <!-- Internal  Data table css -->
-		<link href="../assets/plugins/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-		<link href="../assets/plugins/datatable/css/buttons.bootstrap4.min.css" rel="stylesheet">
-		<link href="../assets/plugins/datatable/css/responsive.bootstrap4.min.css" rel="stylesheet" />
-		<link href="../assets/plugins/datatable/css/jquery.dataTables.min.css" rel="stylesheet">
-		<link href="../assets/plugins/datatable/css/responsive.dataTables.min.css" rel="stylesheet">
-		<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+		<link href="../../assets/plugins/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+		<link href="../../assets/plugins/datatable/css/buttons.bootstrap4.min.css" rel="stylesheet">
+		<link href="../../assets/plugins/datatable/css/responsive.bootstrap4.min.css" rel="stylesheet" />
+		<link href="../../assets/plugins/datatable/css/jquery.dataTables.min.css" rel="stylesheet">
+		<link href="../../assets/plugins/datatable/css/responsive.dataTables.min.css" rel="stylesheet">
+		<link href="../../assets/plugins/select2/css/select2.min.css" rel="stylesheet">
 
 		<!-- Internal Chart-Morris css-->
-		<link href="../assets/plugins/morris.js/morris.css" rel="stylesheet">
+		<link href="../../assets/plugins/morris.js/morris.css" rel="stylesheet">
 
 		<!--  Left-Sidebar css -->
-		<link href="../assets/css/sidemenu.css" rel="stylesheet">
+		<link href="../../assets/css/sidemenu.css" rel="stylesheet">
 
 		<!--  Right-sidemenu css -->
-		<link href="../assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+		<link href="../../assets/plugins/sidebar/sidebar.css" rel="stylesheet">
 
 		<!--  Animations css -->
-		<link href="../assets/css/animate.css" rel="stylesheet">
+		<link href="../../assets/css/animate.css" rel="stylesheet">
 
 		<!-- Internal Nice-select css  -->
-		<link href="../assets/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet"/>
+		<link href="../../assets/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet"/>
 
 		<!-- Internal News-Ticker css-->
-		<link href="../assets/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+		<link href="../../assets/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
 
 		<!-- Jquery-countdown css-->
-		<link href="../assets/plugins/jquery-countdown/countdown.css" rel="stylesheet">
+		<link href="../../assets/plugins/jquery-countdown/countdown.css" rel="stylesheet">
 
 		<!-- Internal News-Ticker css-->
-		<link href="../assets/plugins/newsticker/jquery.jConveyorTicker.css" rel="stylesheet" />
+		<link href="../../assets/plugins/newsticker/jquery.jConveyorTicker.css" rel="stylesheet" />
 
 		<!-- style css-->
-		<link href="../assets/css/style.css" rel="stylesheet">
+		<link href="../../assets/css/style.css" rel="stylesheet">
 
 		<!-- skin css-->
-		<link href="../assets/css/skin-modes.css" rel="stylesheet">
+		<link href="../../assets/css/skin-modes.css" rel="stylesheet">
 
 		<!-- dark-theme css-->
-		<link href="../assets/css/style-dark.css" rel="stylesheet">
+		<link href="../../assets/css/style-dark.css" rel="stylesheet">
 
 		<!--- Animations css-->
-		<link href="../assets/css/animate.css" rel="stylesheet">
+		<link href="../../assets/css/animate.css" rel="stylesheet">
        
 
 	</head>
@@ -70,69 +70,38 @@
 
 		<!-- Loader -->
 		<div id="global-loader" class="light-loader">
-			<img src="../assets/img/loaders/loader.svg" class="loader-img" alt="Loader">
+			<img src="../../assets/img/loaders/loader.svg" class="loader-img" alt="Loader">
 		</div>
 		<!-- /Loader -->
 
 		<!-- main-sidebar opened -->
-		<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-		<aside class="app-sidebar sidebar-scroll ">
-			<div class="main-sidebar-header">
-				<a class=" desktop-logo logo-light" href="index.html"><img src="../assets/img/brand/logo.png" class="main-logo" alt="logo"></a>
-				<a class=" desktop-logo logo-dark" href="index.html"><img src="../assets/img/brand/logo-white.png" class="main-logo dark-theme" alt="logo"></a>
-				<a class="logo-icon mobile-logo icon-light" href="index.html"><img src="../assets/img/brand/favicon.png" class="logo-icon" alt="logo"></a>
-				<a class="logo-icon mobile-logo icon-dark" href="index.html"><img src="../assets/img/brand/favicon-white.png" class="logo-icon dark-theme" alt="logo"></a>
-			</div>
-			<div class="main-sidebar-body circle-animation ">
-
-				<ul class="side-menu circle">
-					<li class="slide">
-						<a class="side-menu__item" href="/dashboard"><i class="side-menu__icon ti-desktop"></i><span class="side-menu__label">Dashboard</span></a>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" href="/billing"><i class="side-menu__icon ti-package"></i><span class="side-menu__label">Billing</span></a>
-					</li>
-
-                    <li class="slide">
-						<a class="side-menu__item" href="/account"><i class="side-menu__icon ti-package"></i><span class="side-menu__label">Account</span></a>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" href="#" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"><i class="side-menu__icon ti-package"></i><span class="side-menu__label">Logout</span></a>
-						<form id="logout-form" action="{{ route('logout') }}" method="POST"
-                            style="display: none;">
-                            @csrf
-                        </form>
-					</li>
-				</ul>
-			</div>
-		</aside>
+	
 		<!-- main-sidebar -->
 
 		<!-- main-content -->
-		<div class="main-content app-content">
+		<div>
 
 			<!-- main-header -->
 			<div class="main-header sticky side-header nav nav-item">
 				<div class="container-fluid">
 					<div class="main-header-left ">
-						<div class="app-sidebar__toggle mobile-toggle" data-toggle="sidebar">
-							<a class="open-toggle" href="#"><i class="header-icons" data-eva="menu-outline"></i></a>
-							<a class="close-toggle" href="#"><i class="header-icons" data-eva="close-outline"></i></a>
-						</div>
 						<div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
-							<input type="search" class="form-control" placeholder="Search for anything...">
-							<button class="btn"><i class="fas fa-search"></i></button>
+                            <a href="/"><img src="../../assets/img/brand/logo.png" class="mobile-logo" alt="logo"></a>
 						</div>
 					</div>
 					<div class="main-header-center">
-						<div class="responsive-logo">
-							<a href="/"><img src="../assets/img/brand/logo.png" class="mobile-logo" alt="logo"></a>
-						</div>
+						<!-- <div class="responsive-logo">
+							<a href="/"><img src="../../assets/img/brand/logo.png" class="mobile-logo" alt="logo"></a>
+						</div> -->
+                        <nav class="nav main-nav-line flex-column flex-md-row" style="padding-left: 30px;">
+                            <a class="nav-link" data-toggle="tab" href="/admin/customers">CUSTOMERS</a>
+                            <a class="nav-link" data-toggle="tab" href="/admin/invoices">INVOICES</a>
+                            <a class="nav-link" data-toggle="tab" href="/admin/management">MANAGEMENT</a>
+                        </nav>
 					</div>
 					<div class="main-header-right">
 						<div class="nav nav-item  navbar-nav-right ml-auto">
-							<form class="navbar-form nav-item my-auto d-lg-none" role="search">
+							<!-- <form class="navbar-form nav-item my-auto d-lg-none" role="search">
 								<div class="input-group nav-item my-auto">
 									<input type="text" class="form-control" placeholder="Search">
 									<span class="input-group-btn">
@@ -144,16 +113,16 @@
 										</button>
 									</span>
 								</div>
-							</form>
+							</form> -->
 							<button class="navbar-toggler navresponsive-toggler d-sm-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
 								aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
 								<span class="navbar-toggler-icon fe fe-more-vertical "></span>
 							</button>
 							<div class="dropdown main-profile-menu nav nav-item nav-link">
-								<a class="profile-user" href=""><img alt="" src="../assets/img/faces/5.jpg"></a>
+								<a class="profile-user" href=""><img alt="" src="../../assets/img/faces/5.jpg"></a>
 								<div class="dropdown-menu dropdown-menu-arrow animated fadeInUp">
 									<div class="main-header-profile header-img">
-										<div class="main-img-user"><img alt="" src="../assets/img/faces/5.jpg"></div>
+										<div class="main-img-user"><img alt="" src="../../assets/img/faces/5.jpg"></div>
 										<h6>Elizabeth Jane</h6><span>Premium Member</span>
 									</div>
 									<a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
@@ -213,7 +182,7 @@
 									</div>
 									<div class="main-message-list text-scroll">
 										<a href="#" class="p-3 d-flex border-bottom">
-											<div class="  drop-img  cover-image  " data-image-src="../assets/img/faces/3.jpg">
+											<div class="  drop-img  cover-image  " data-image-src="../../assets/img/faces/3.jpg">
 												<span class="avatar-status bg-teal"></span>
 											</div>
 
@@ -226,7 +195,7 @@
 											</div>
 										</a>
 										<a href="#" class="p-3 d-flex border-bottom">
-											<div class="drop-img cover-image" data-image-src="../assets/img/faces/2.jpg">
+											<div class="drop-img cover-image" data-image-src="../../assets/img/faces/2.jpg">
 												<span class="avatar-status bg-teal"></span>
 											</div>
 											<div class="wd-90p">
@@ -238,7 +207,7 @@
 											</div>
 										</a>
 										<a href="#" class="p-3 d-flex border-bottom">
-											<div class="drop-img cover-image" data-image-src="../assets/img/faces/9.jpg">
+											<div class="drop-img cover-image" data-image-src="../../assets/img/faces/9.jpg">
 												<span class="avatar-status bg-teal"></span>
 											</div>
 											<div class="wd-90p">
@@ -250,7 +219,7 @@
 											</div>
 										</a>
 										<a href="#" class="p-3 d-flex border-bottom">
-											<div class="drop-img cover-image" data-image-src="../assets/img/faces/12.jpg">
+											<div class="drop-img cover-image" data-image-src="../../assets/img/faces/12.jpg">
 												<span class="avatar-status bg-danger"></span>
 											</div>
 											<div class="wd-90p">
@@ -262,7 +231,7 @@
 											</div>
 										</a>
 										<a href="#" class="p-3 d-flex border-bottom">
-											<div class="drop-img cover-image" data-image-src="../assets/img/faces/5.jpg">
+											<div class="drop-img cover-image" data-image-src="../../assets/img/faces/5.jpg">
 												<span class="avatar-status bg-teal"></span>
 											</div>
 											<div class="wd-90p">
@@ -370,10 +339,10 @@
 								</div>
 							</div>
 							<div class="dropdown main-profile-menu nav nav-item nav-link">
-								<a class="profile-user" href=""><img alt="" src="../assets/img/faces/5.jpg"></a>
+								<a class="profile-user" href=""><img alt="" src="../../assets/img/faces/5.jpg"></a>
 								<div class="dropdown-menu dropdown-menu-arrow animated fadeInUp">
 									<div class="main-header-profile header-img">
-										<div class="main-img-user"><img alt="" src="../assets/img/faces/5.jpg"></div>
+										<div class="main-img-user"><img alt="" src="../../assets/img/faces/5.jpg"></div>
 										<h6>Elizabeth Jane</h6><span>Premium Member</span>
 									</div>
 									<a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
@@ -425,7 +394,7 @@
 					<div class="tab-pane active" id="tab">
 						<div class="card-body p-0">
 							<div class="header-user text-center mt-4">
-								<span class="avatar avatar-xxl brround mx-auto"><img src="../assets/img/faces/5.jpg" alt="Profile-img" class="avatar avatar-xxl brround"></span>
+								<span class="avatar avatar-xxl brround mx-auto"><img src="../../assets/img/faces/5.jpg" alt="Profile-img" class="avatar avatar-xxl brround"></span>
 								<div class=" text-center font-weight-semibold user mt-3 h6 mb-0">Elizabeth Jane</div>
 								<span class="text-muted">App Developer</span>
 								<div class="card-body">
@@ -468,19 +437,19 @@
 								<div class="row mt-4">
 									<div class="col-12">
 										<div class="followers">
-											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../assets/img/faces/3.jpg">
+											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../../assets/img/faces/3.jpg">
 												<span class="avatar-status bg-green"></span>
 											</a>
-											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../assets/img/faces/6.jpg">
+											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../../assets/img/faces/6.jpg">
 												<span class="avatar-status bg-red"></span>
 											</a>
-											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../assets/img/faces/3.jpg">
+											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../../assets/img/faces/3.jpg">
 												<span class="avatar-status bg-warning"></span>
 											</a>
-											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../assets/img/faces/4.jpg">
+											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../../assets/img/faces/4.jpg">
 												<span class="avatar-status bg-green"></span>
 											</a>
-											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../assets/img/faces/9.jpg">
+											<a href="#" class="avatar brround avatar-md cover-image m-1" data-image-src="../../assets/img/faces/9.jpg">
 												<span class="avatar-status bg-warning"></span>
 											</a>
 											<a href="#" class="avatar brround avatar-md cover-image m-1 follwers">+34</a>
@@ -519,7 +488,7 @@
 									<li class="active">
 										<div class="d-flex bd-highlight w-100">
 											<div class="img_cont">
-												<img src="../assets/img/faces/12.jpg" class="rounded-circle user_img" alt="img">
+												<img src="../../assets/img/faces/12.jpg" class="rounded-circle user_img" alt="img">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -532,7 +501,7 @@
 									<li>
 										<div class="d-flex bd-highlight w-100">
 											<div class="img_cont">
-												<img src="../assets/img/faces/2.jpg" class="rounded-circle user_img" alt="img">
+												<img src="../../assets/img/faces/2.jpg" class="rounded-circle user_img" alt="img">
 												<span class=" online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -545,7 +514,7 @@
 									<li>
 										<div class="d-flex bd-highlight w-100">
 											<div class="img_cont">
-												<img src="../assets/img/faces/5.jpg" class="rounded-circle user_img" alt="img">
+												<img src="../../assets/img/faces/5.jpg" class="rounded-circle user_img" alt="img">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -558,7 +527,7 @@
 									<li>
 										<div class="d-flex bd-highlight w-100">
 											<div class="img_cont">
-												<img src="../assets/img/faces/7.jpg" class="rounded-circle user_img" alt="img">
+												<img src="../../assets/img/faces/7.jpg" class="rounded-circle user_img" alt="img">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -571,7 +540,7 @@
 									<li>
 										<div class="d-flex bd-highlight w-100">
 											<div class="img_cont">
-												<img src="../assets/img/faces/8.jpg" class="rounded-circle user_img" alt="img">
+												<img src="../../assets/img/faces/8.jpg" class="rounded-circle user_img" alt="img">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -584,7 +553,7 @@
 									<li>
 										<div class="d-flex bd-highlight w-100">
 											<div class="img_cont">
-												<img src="../assets/img/faces/3.jpg" class="rounded-circle user_img" alt="img">
+												<img src="../../assets/img/faces/3.jpg" class="rounded-circle user_img" alt="img">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -597,7 +566,7 @@
 									<li>
 										<div class="d-flex bd-highlight w-100">
 											<div class="img_cont">
-												<img src="../assets/img/faces/14.jpg" class="rounded-circle user_img" alt="img">
+												<img src="../../assets/img/faces/14.jpg" class="rounded-circle user_img" alt="img">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -610,7 +579,7 @@
 									<li>
 										<div class="d-flex bd-highlight w-100">
 											<div class="img_cont">
-												<img src="../assets/img/faces/11.jpg" class="rounded-circle user_img" alt="img">
+												<img src="../../assets/img/faces/11.jpg" class="rounded-circle user_img" alt="img">
 											</div>
 											<div class="user_info">
 												<h5 class="mt-1 mb-1">Khadija Mehr</h5>
@@ -894,7 +863,7 @@
 		<!-- Footer opened -->
 		<div class="main-footer ht-40">
 			<div class="container-fluid pd-t-0-f ht-100p">
-				<span>Copyright © 2020 <a href="#">Xino</a>. Designed by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.</span>
+				<span>Copyright © 2020 <a href="#">SANTI</a>. Designed by <a href="">santi</a> All rights reserved.</span>
 			</div>
 		</div>
 		<!-- Footer closed -->
@@ -903,98 +872,98 @@
 		<a href="#top" id="back-to-top"><i class="la la-chevron-up"></i></a>
 
 		<!-- JQuery min js -->
-		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+		<script src="../../assets/plugins/jquery/jquery.min.js"></script>
 
 		<!-- Datepicker js -->
-		<script src="../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
+		<script src="../../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
 
 		<!-- Bootstrap Bundle js -->
-		<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 		<!-- Ionicons js -->
-		<script src="../assets/plugins/ionicons/ionicons.js"></script>
+		<script src="../../assets/plugins/ionicons/ionicons.js"></script>
 
 		<!-- Moment js -->
-		<script src="../assets/plugins/moment/moment.js"></script>
+		<script src="../../assets/plugins/moment/moment.js"></script>
 
 		<!--Chart bundle min js -->
-		<script src="../assets/plugins/chart.js/Chart.bundle.min.js"></script>
-		<script src="../assets/plugins/raphael/raphael.min.js"></script>
-		<script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+		<script src="../../assets/plugins/chart.js/Chart.bundle.min.js"></script>
+		<script src="../../assets/plugins/raphael/raphael.min.js"></script>
+		<script src="../../assets/plugins/peity/jquery.peity.min.js"></script>
 
 		<!-- JQuery sparkline js -->
-		<script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+		<script src="../../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
 
 		<!-- Sampledata js -->
-		<script src="../assets/js/chart.flot.sampledata.js"></script>
+		<script src="../../assets/js/chart.flot.sampledata.js"></script>
 
 		<!-- Perfect-scrollbar js -->
-		<script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-		<script src="../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+		<script src="../../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="../../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
 
 		<!-- Internal  Flot js-->
-		<!-- <script src="../assets/plugins/jquery.flot/jquery.flot.js"></script>
-		<script src="../assets/plugins/jquery.flot/jquery.flot.pie.js"></script>
-		<script src="../assets/plugins/jquery.flot/jquery.flot.resize.js"></script>
-		<script src="../assets/plugins/jquery.flot/jquery.flot.categories.js"></script>
-		<script src="../assets/js/dashboard.sampledata.js"></script>
-		<script src="../assets/js/chart.flot.sampledata.js"></script> -->
+		<!-- <script src="../../assets/plugins/jquery.flot/jquery.flot.js"></script>
+		<script src="../../assets/plugins/jquery.flot/jquery.flot.pie.js"></script>
+		<script src="../../assets/plugins/jquery.flot/jquery.flot.resize.js"></script>
+		<script src="../../assets/plugins/jquery.flot/jquery.flot.categories.js"></script>
+		<script src="../../assets/js/dashboard.sampledata.js"></script>
+		<script src="../../assets/js/chart.flot.sampledata.js"></script> -->
 
 		<!-- Internal Newsticker js-->
-		<script src="../assets/plugins/newsticker/jquery.jConveyorTicker.js"></script>
-		<script src="../assets/js/newsticker.js"></script>
+		<script src="../../assets/plugins/newsticker/jquery.jConveyorTicker.js"></script>
+		<script src="../../assets/js/newsticker.js"></script>
 
 		<!-- Eva-icons js -->
-		<script src="../assets/js/eva-icons.min.js"></script>
+		<script src="../../assets/js/eva-icons.min.js"></script>
 
 		<!-- Sidebar js -->
-		<script src="../assets/plugins/side-menu/sidemenu.js"></script>
+		<script src="../../assets/plugins/side-menu/sidemenu.js"></script>
 
 		<!-- right-sidebar js -->
-		<script src="../assets/plugins/sidebar/sidebar.js"></script>
-		<script src="../assets/plugins/sidebar/sidebar-custom.js"></script>
+		<script src="../../assets/plugins/sidebar/sidebar.js"></script>
+		<script src="../../assets/plugins/sidebar/sidebar-custom.js"></script>
 
 		<!-- Rating js-->
-		<script src="../assets/plugins/rating/jquery.rating-stars.js"></script>
-		<script src="../assets/plugins/rating/jquery.barrating.js"></script>
+		<script src="../../assets/plugins/rating/jquery.rating-stars.js"></script>
+		<script src="../../assets/plugins/rating/jquery.barrating.js"></script>
 
         <!-- Internal Data tables -->
-		<script src="../assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
-		<script src="../assets/plugins/datatable/js/dataTables.dataTables.min.js"></script>
-		<script src="../assets/plugins/datatable/js/dataTables.responsive.min.js"></script>
-		<script src="../assets/plugins/datatable/js/responsive.dataTables.min.js"></script>
-		<script src="../assets/plugins/datatable/js/jquery.dataTables.js"></script>
-		<script src="../assets/plugins/datatable/js/dataTables.bootstrap4.js"></script>
-		<script src="../assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
-		<script src="../assets/plugins/datatable/js/buttons.bootstrap4.min.js"></script>
-		<script src="../assets/plugins/datatable/js/jszip.min.js"></script>
-		<script src="../assets/plugins/datatable/js/pdfmake.min.js"></script>
-		<script src="../assets/plugins/datatable/js/vfs_fonts.js"></script>
-		<script src="../assets/plugins/datatable/js/buttons.html5.min.js"></script>
-		<script src="../assets/plugins/datatable/js/buttons.print.min.js"></script>
-		<script src="../assets/plugins/datatable/js/buttons.colVis.min.js"></script>
-		<script src="../assets/plugins/datatable/js/dataTables.responsive.min.js"></script>
-		<script src="../assets/plugins/datatable/js/responsive.bootstrap4.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/dataTables.dataTables.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/dataTables.responsive.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/responsive.dataTables.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/jquery.dataTables.js"></script>
+		<script src="../../assets/plugins/datatable/js/dataTables.bootstrap4.js"></script>
+		<script src="../../assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/buttons.bootstrap4.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/jszip.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/pdfmake.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/vfs_fonts.js"></script>
+		<script src="../../assets/plugins/datatable/js/buttons.html5.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/buttons.print.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/buttons.colVis.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/dataTables.responsive.min.js"></script>
+		<script src="../../assets/plugins/datatable/js/responsive.bootstrap4.min.js"></script>
 
 		<!-- Internal Datatable js -->
-		<script src="../assets/js/table-data.js"></script>
+		<script src="../../assets/js/table-data.js"></script>
 
 		<!-- P-scroll js -->
-		<script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-		<script src="../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+		<script src="../../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="../../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
 
 		<!-- Internal Nice-select js-->
-		<script src="../assets/plugins/jquery-nice-select/js/jquery.nice-select.js"></script>
-		<script src="../assets/plugins/jquery-nice-select/js/nice-select.js"></script>
+		<script src="../../assets/plugins/jquery-nice-select/js/jquery.nice-select.js"></script>
+		<script src="../../assets/plugins/jquery-nice-select/js/nice-select.js"></script>
 
 		<!-- Sticky js -->
-		<script src="../assets/js/sticky.js"></script>
+		<script src="../../assets/js/sticky.js"></script>
 
 		<!-- index js -->
-		<!-- <script src="../assets/js/dashboard.js"></script> -->
+		<!-- <script src="../../assets/js/dashboard.js"></script> -->
 
 		<!-- custom js -->
-		<script src="../assets/js/custom.js"></script>
+		<script src="../../assets/js/custom.js"></script>
 
 	</body>
 </html>

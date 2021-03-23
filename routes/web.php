@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Billing;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\admin\CustomerController;
+use App\Http\Controllers\admin\InvoicesController;
+use App\Http\Controllers\admin\ManagementController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +19,22 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::redirect('/', '/login');
+
+Route::get('/billing', [Billing::class, 'index'])->middleware('auth');;
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');;
+Route::get('/account', [AccountController::class, 'index'])->middleware('auth');;
+
+Route::prefix('admin')->group(function () {
+    Route::get('/customers', [CustomerController::class, 'index']);
+    Route::get('/customers/{id}', [CustomerController::class, 'show']);
+    Route::get('/invoices', [InvoicesController::class, 'index']);
+    Route::get('/management', [ManagementController::class, 'index']);
 });
-
-Route::get('/billing', [Billing::class, 'index']);
-
-Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
