@@ -94,9 +94,9 @@
 							<a href="/"><img src="../../assets/img/brand/logo.png" class="mobile-logo" alt="logo"></a>
 						</div> -->
                         <nav class="nav main-nav-line flex-column flex-md-row" style="padding-left: 30px;">
-                            <a class="nav-link" data-toggle="tab" href="/admin/customers">CUSTOMERS</a>
-                            <a class="nav-link" data-toggle="tab" href="/admin/invoices">INVOICES</a>
-                            <a class="nav-link" data-toggle="tab" href="/admin/management">MANAGEMENT</a>
+                            <a class="nav-link"  href="/admin/customers">CUSTOMERS</a>
+                            <a class="nav-link"  href="/admin/invoices">INVOICES</a>
+                            <a class="nav-link"  href="/admin/management">MANAGEMENT</a>
                         </nav>
 					</div>
 					<div class="main-header-right">
@@ -132,11 +132,11 @@
 									<a class="dropdown-item" href="page-signin.html"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
 								</div>
 							</div>
-							<div class="dropdown main-header-message right-toggle">
+							<!-- <div class="dropdown main-header-message right-toggle">
 								<a class="nav-link " data-toggle="sidebar-right" data-target=".sidebar-right">
 									<i class="ti-menu tx-20 bg-transparent"></i>
 								</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

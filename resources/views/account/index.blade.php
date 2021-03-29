@@ -31,13 +31,32 @@
                         </div>
 				    </div>
 			    </div>
+                @if (session('message'))
+                    <div class="alert alert-success" role="alert">
+                        <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                        <strong>Wow!</strong> {{ session('message') }}
+                    </div>
+                @endif
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger mg-b-0" role="alert">
+                        <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error!</strong> {{ $error }}
+                    </div>
+                    @endforeach
+			    @endif
                 <div class="panel-body tabs-menu-body main-content-body-right" style="padding-left: 10%; padding-right: 10%;">
                     <div class="tab-content">
                             <div class="tab-pane active" id="tab1">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="mb-4 main-content-label">Personal Information</div>
-                                        <form class="form-horizontal">
+                                        <form class="form-horizontal" method="post" action={{route('profileUpdate')}}>
+                                            @csrf
                                             <div class="mb-4 main-content-label">Name</div>
                                             <div class="form-group ">
                                                 <div class="row">
@@ -45,7 +64,7 @@
                                                         <label class="form-label">User Name</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control"  placeholder="User Name">
+                                                        <input type="text" class="form-control" name="name" placeholder="User Name" value="{{old('name',$profile->name)}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -55,7 +74,7 @@
                                                         <label class="form-label">First Name</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control"  placeholder="First Name">
+                                                        <input type="text" class="form-control"  placeholder="First Name" name="first_name" value="{{ old('first_name', $profile->first_name) }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,7 +84,7 @@
                                                         <label class="form-label">last Name</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control"  placeholder="Last Name">
+                                                        <input type="text" class="form-control"  placeholder="Last Name" name="last_name" value="{{ old('last_name', $profile->last_name) }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -75,7 +94,7 @@
                                                         <label class="form-label">Nick Name</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control"  placeholder="Nick Name">
+                                                        <input type="text" class="form-control"  placeholder="Nick Name" name="nick_name" value="{{ old('nick_name', $profile->nick_name) }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -87,7 +106,7 @@
                                                         <label class="form-label">Email<i>(required)</i></label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control"  placeholder="Email">
+                                                        <input type="text" class="form-control"  placeholder="Email" name="email" value="{{ old('email', $profile->email) }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,7 +117,7 @@
                                                         <label class="form-label">Phone</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control"  placeholder="phone number" value="+245 354 654">
+                                                        <input type="text" class="form-control"  placeholder="phone number" name="phone" value="{{ old('phone', $profile->phone) }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +127,7 @@
                                                         <label class="form-label">Address</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <textarea class="form-control" name="example-textarea-input" rows="2"  placeholder="Address">San Francisco, CA</textarea>
+                                                        <input class="form-control"  rows="2"  placeholder="Address" name="address" value="{{ old('address', $profile->address) }}"></input>
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,15 +139,16 @@
                                                         <label class="form-label">Biographical Info</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <textarea class="form-control" name="example-textarea-input" rows="4" placeholder=""></textarea>
+                                                        <textarea class="form-control"  rows="4" placeholder="" name="bio">{{ old('bio', $profile->bio) }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="card-footer">
+                                              <button type="submit" class="btn btn-primary waves-effect waves-light">Update Profile</button>
+                                            </div>
                                         </form>
                                     </div>
-                                    <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light">Update Profile</button>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="tab-pane" id="tab2">
@@ -137,20 +157,21 @@
                                 <h4 class="text-left" style="margin-top: 25px">Change Your Password</h4>
                                 <div class="row">
                                     <div class="col-md-4 col-sm6">
-                                        <form>
+                                        <form method="post" action={{route('passwordUpdate')}}>
+                                        @csrf
                                             <div class="form-group text-left" >
                                                 <label>Old password</label>
-                                                <input class="form-control" placeholder="Old password" type="text">
+                                                <input class="form-control" placeholder="Old password" name="current_password" type="text">
                                             </div>
                                             <div class="form-group text-left">
                                                 <label>New Password</label>
-                                                <input class="form-control" placeholder="Enter your password" type="password">
+                                                <input class="form-control" placeholder="Enter your password" name="password" type="password">
                                             </div>
                                             <div class="form-group text-left">
                                                 <label>Confirm Password</label>
-                                                <input class="form-control" placeholder="Enter your password" type="password">
+                                                <input class="form-control" placeholder="Enter your password" type="password" name="confirmation_password">
                                             </div>
-                                            <button class="btn ripple btn-main-primary btn-block">Change Password</button>
+                                            <button class="btn ripple btn-main-primary btn-block" type="submit">Change Password</button>
                                         </form>
                                     </div>
                                 </div>

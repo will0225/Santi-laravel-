@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\InvoicesController;
 use App\Http\Controllers\admin\ManagementController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,11 +26,13 @@ use App\Http\Controllers\admin\ManagementController;
 
 Route::redirect('/', '/login');
 
-Route::get('/billing', [Billing::class, 'index'])->middleware('auth');;
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');;
-Route::get('/account', [AccountController::class, 'index'])->middleware('auth');;
+Route::get('/billing', [Billing::class, 'index'])->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/account', [AccountController::class, 'index'])->middleware('auth');
+Route::post('/account', [AccountController::class, 'profileUpdate'])->middleware('auth')->name('profileUpdate');
+Route::post('/password-update', [AccountController::class, 'passwordUpdate'])->middleware('auth')->name('passwordUpdate');
 
-Route::prefix('admin')->group(function () {
+Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/customers', [CustomerController::class, 'index']);
     Route::get('/customers/{id}', [CustomerController::class, 'show']);
     Route::get('/invoices', [InvoicesController::class, 'index']);

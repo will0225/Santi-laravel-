@@ -19,6 +19,7 @@
                             <div class="table-responsive">
                                 <table class="table text-md-nowrap" id="transactions">
                                     <thead>
+                                   
                                         <tr>
                                             <th class="wd-15p border-bottom-0">CLIENT_ID</th>
                                             <th class="wd-15p border-bottom-0">FIRST_NAME</th>
@@ -29,9 +30,21 @@
                                             <th class="wd-25p border-bottom-0">CREATED_AT</th>
                                             <th class="wd-25p border-bottom-0">STATUS</th>
                                         </tr>
+                                    
                                     </thead>
                                     <tbody>
-                                        
+                                    @foreach ($customers as $customer)
+                                        <tr>
+                                            <td>{{$customer->id}}</td>
+                                            <td>{{$customer->first_name}}</td>
+                                            <td>{{$customer->last_name}}</td>
+                                            <td></td>
+                                            <td>{{$customer->email}}</td>
+                                            <td></td>
+                                            <td>{{$customer->created_at}}</td>
+                                            <td>status</td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
