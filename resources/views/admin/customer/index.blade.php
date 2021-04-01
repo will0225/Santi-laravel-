@@ -36,13 +36,17 @@
                                     @foreach ($customers as $customer)
                                         <tr>
                                             <td>{{$customer->id}}</td>
-                                            <td>{{$customer->first_name}}</td>
+                                            <td><a href="{{ route('admin.customer.profile', ['id' => $customer->id ]) }}">{{$customer->first_name}}</a></td>
                                             <td>{{$customer->last_name}}</td>
-                                            <td></td>
+                                            <td>{{$customer->company}}</td>
                                             <td>{{$customer->email}}</td>
                                             <td></td>
                                             <td>{{$customer->created_at}}</td>
-                                            <td>status</td>
+                                            <td>
+                                                <div class="main-toggle main-toggle-success {{$customer->active?'on':'off'}}">
+                                                    <span></span>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

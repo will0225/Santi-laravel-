@@ -886,6 +886,9 @@
 		<!-- Moment js -->
 		<script src="../../assets/plugins/moment/moment.js"></script>
 
+		<!-- Internal jquery.maskedinput js -->
+		<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+
 		<!--Chart bundle min js -->
 		<script src="../../assets/plugins/chart.js/Chart.bundle.min.js"></script>
 		<script src="../../assets/plugins/raphael/raphael.min.js"></script>
@@ -898,8 +901,8 @@
 		<script src="../../assets/js/chart.flot.sampledata.js"></script>
 
 		<!-- Perfect-scrollbar js -->
-		<script src="../../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-		<script src="../../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+		<!-- <script src="../../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="../../assets/plugins/perfect-scrollbar/p-scroll.js"></script> -->
 
 		<!-- Internal  Flot js-->
 		<!-- <script src="../../assets/plugins/jquery.flot/jquery.flot.js"></script>
@@ -949,19 +952,24 @@
 		<script src="../../assets/js/table-data.js"></script>
 
 		<!-- P-scroll js -->
-		<script src="../../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-		<script src="../../assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+		<!-- <script src="../../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="../../assets/plugins/perfect-scrollbar/p-scroll.js"></script> -->
 
 		<!-- Internal Nice-select js-->
 		<script src="../../assets/plugins/jquery-nice-select/js/jquery.nice-select.js"></script>
 		<script src="../../assets/plugins/jquery-nice-select/js/nice-select.js"></script>
 
+		<!-- Internal ion.rangeSlider.min js -->
+		<script src="../../assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+		
+		<!-- eva-icons js -->
+		<script src="../../assets/js/eva-icons.min.js"></script>
 		<!-- Sticky js -->
 		<script src="../../assets/js/sticky.js"></script>
 
 		<!-- index js -->
 		<!-- <script src="../../assets/js/dashboard.js"></script> -->
-
+		<script src="../../assets/js/form-elements.js"></script>
 		<!-- custom js -->
 		<script src="../../assets/js/custom.js"></script>
 

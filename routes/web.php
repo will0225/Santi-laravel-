@@ -34,7 +34,7 @@ Route::post('/password-update', [AccountController::class, 'passwordUpdate'])->m
 
 Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/customers', [CustomerController::class, 'index']);
-    Route::get('/customers/{id}', [CustomerController::class, 'show']);
+    Route::get('/customers/{id}', [CustomerController::class, 'show'])->name('admin.customer.profile');
     Route::get('/invoices', [InvoicesController::class, 'index']);
     Route::get('/management', [ManagementController::class, 'index']);
 });

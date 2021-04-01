@@ -14,6 +14,7 @@ class CustomerController extends Controller
     }
 
     function show($id) {
-        return view('admin.customer.profile');
+        $customer = User::where('id', $id)->get();
+        return view('admin.customer.profile', ['customer'=>$customer[0]]);
     }
 }
