@@ -131,7 +131,13 @@
 									<a class="dropdown-item" href=""><i class="far fa-edit"></i> Edit Profile</a>
 									<a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a>
 									<a class="dropdown-item" href=""><i class="fas fa-sliders-h"></i> Account Settings</a>
-									<a class="dropdown-item" href="page-signin.html"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+									<a class="dropdown-item" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+			
+									<form id="logout-form" action="{{ route('logout') }}" method="POST"
+										style="display: none;">
+										@csrf
+									</form>
 								</div>
 							</div>
 							<!-- <div class="dropdown main-header-message right-toggle">
