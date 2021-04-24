@@ -12,7 +12,7 @@
                                     <h6 class="card-title mb-1">Dashboard</h6>
                                 </div>
                                 <div class="col-md-6 col-lg-6" style="text-align: right">
-                                    <h6 class="card-title mb-1">99.99EUR</h6>
+                                    <h6 class="card-title mb-1">{{ $balance }}EUR</h6>
                                 </div>
                             </div>
 						</div>
@@ -48,7 +48,16 @@
 											</tr>
 										</thead>
 										<tbody>
-										
+											@foreach ($transactions as $transaction)
+											<tr>
+												<td>{{ $transaction->id }}</td>
+												<td>{{ $transaction->created_at }}</td>
+												<td>{{ $transaction->type }}</td>
+												<td>{{ $transaction->description }}</td>
+												<td>{{ $transaction->amount }}EUR</td>
+												<td>{{ $transaction->balance }}EUR</td>
+											</tr>
+											@endforeach
 										</tbody>
 									</table>
 								</div>

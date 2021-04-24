@@ -28,7 +28,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                        @foreach ($invoices as $invoice)
+                                        <tr>
+                                            <td>{{$invoice->id}}</td>
+                                            <td>{{$invoice->user->id}}</td>
+                                            <td>{{$invoice->created_at->format('m/d/Y')}}</td>
+                                            <td>{{$invoice->amount}}EUR</td>
+                                            <td>{{'visa'}}</td>
+                                        </tr> 
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

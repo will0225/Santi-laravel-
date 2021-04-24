@@ -27,18 +27,22 @@ use App\Http\Controllers\admin\ManagementController;
 Route::redirect('/', '/login');
 
 Route::get('/billing', [Billing::class, 'index'])->middleware('auth');
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::post('/billing', [Billing::class, 'makePayment'])->middleware('auth')->name('make-payment');
+Route::get('/invoices/pdf/{id}', [Billing::class, 'createInvoicePdf'])->middleware('auth')->name('createInvoicePdf');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/account', [AccountController::class, 'index'])->middleware('auth');
 Route::post('/account', [AccountController::class, 'profileUpdate'])->middleware('auth')->name('profileUpdate');
 Route::post('/password-update', [AccountController::class, 'passwordUpdate'])->middleware('auth')->name('passwordUpdate');
 
+
 Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/customers', [CustomerController::class, 'index']);
     Route::get('/customers/{id}', [CustomerController::class, 'show'])->name('admin.customer.profile');
+    Route::post('/customers/active', [CustomerController::class, 'isActive'])->name('admin.customer.active');
+    Route::post('/customers/delete', [CustomerController::class, 'delete'])->name('admin.customer.delete');
+    Route::post('/customers/addTransaction', [CustomerController::class, 'addTransaction'])->name('admin.customer.addTransaction');
     Route::get('/invoices', [InvoicesController::class, 'index']);
+    Route::get('/invoices/pdf/{customer_id}/{id}', [CustomerController::class, 'createInvoicePdf'])->name('admin.createInvoicePdf');
     Route::get('/management', [ManagementController::class, 'index']);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');

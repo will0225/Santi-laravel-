@@ -20,6 +20,7 @@ class CreateTransactionTable extends Migration
             $table->string('amount')->nullable();
             $table->foreignId('receiver_id');
             $table->string('description')->nullable();
+            $table->string('type')->nullable();
         });
     }
 

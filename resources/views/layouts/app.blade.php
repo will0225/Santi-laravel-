@@ -62,7 +62,8 @@
 
 		<!--- Animations css-->
 		<link href="../assets/css/animate.css" rel="stylesheet">
-       
+       <!-- JQuery min js -->
+		<script src="../assets/plugins/jquery/jquery.min.js"></script>
 
 	</head>
 
@@ -903,8 +904,7 @@
 		<!-- Back-to-top -->
 		<a href="#top" id="back-to-top"><i class="la la-chevron-up"></i></a>
 
-		<!-- JQuery min js -->
-		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+		
 
 		<!-- Datepicker js -->
 		<script src="../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>

@@ -62,7 +62,9 @@
 
 		<!--- Animations css-->
 		<link href="../../assets/css/animate.css" rel="stylesheet">
-       
+
+		<!-- JQuery min js -->
+		<script src="../../assets/plugins/jquery/jquery.min.js"></script>
 
 	</head>
 
@@ -362,7 +364,7 @@
 				</div>
 			</div>
 			<!-- mobile-header -->
-
+			
 			<!-- container -->
             @yield('content')
 			<!-- /conatiner -->
@@ -871,8 +873,7 @@
 		<!-- Back-to-top -->
 		<a href="#top" id="back-to-top"><i class="la la-chevron-up"></i></a>
 
-		<!-- JQuery min js -->
-		<script src="../../assets/plugins/jquery/jquery.min.js"></script>
+		
 
 		<!-- Datepicker js -->
 		<script src="../../assets/plugins/jquery-ui/ui/widgets/datepicker.js"></script>
@@ -887,7 +888,7 @@
 		<script src="../../assets/plugins/moment/moment.js"></script>
 
 		<!-- Internal jquery.maskedinput js -->
-		<script src="../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
+		<script src="../../assets/plugins/jquery.maskedinput/jquery.maskedinput.js"></script>
 
 		<!--Chart bundle min js -->
 		<script src="../../assets/plugins/chart.js/Chart.bundle.min.js"></script>
@@ -958,10 +959,19 @@
 		<!-- Internal Nice-select js-->
 		<script src="../../assets/plugins/jquery-nice-select/js/jquery.nice-select.js"></script>
 		<script src="../../assets/plugins/jquery-nice-select/js/nice-select.js"></script>
+		
+		<!-- select2.min js -->
+		<script src="../../assets/plugins/select2/js/select2.min.js"></script>
 
 		<!-- Internal ion.rangeSlider.min js -->
 		<script src="../../assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 		
+		<!-- Internal jquery-simple-datetimepicker js -->
+		<script src="../../assets/plugins/amazeui-datetimepicker/js/amazeui.datetimepicker.min.js"></script>
+
+		<!-- Ionicons js -->
+		<script src="../../assets/plugins/jquery-simple-datetimepicker/jquery.simple-dtpicker.js"></script>
+
 		<!-- eva-icons js -->
 		<script src="../../assets/js/eva-icons.min.js"></script>
 		<!-- Sticky js -->
@@ -972,6 +982,6 @@
 		<script src="../../assets/js/form-elements.js"></script>
 		<!-- custom js -->
 		<script src="../../assets/js/custom.js"></script>
-
+		<script src="../../assets/js/admin_app.js"></script>
 	</body>
 </html>

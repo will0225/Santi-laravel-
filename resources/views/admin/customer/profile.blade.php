@@ -5,14 +5,17 @@
         <div class="row row-sm">
             <div class="col-lg-12 col-md-12">
 				<div class="card" id="basic-alert" style="margin-top: 25px">
+                    
+
 					<div class="card-body" style="padding: 0">
 						<div style="padding-left: 10%; padding-right: 10%;margin-top: 60px; margin-bottom: 30px;">
                             <div class="row">
                                 <div class="col-md-6 col-lg-6" style="text-align: left">
                                     <h6 class="card-title mb-1">CUSTOMER PROFILE</h6>
+                                    <h5 class="main-profile-name"># {{ $customer->id }}    {{$customer->first_name}}   {{$customer->last_name}}</h5>
                                 </div>
                                 <div class="col-md-6 col-lg-6" style="text-align: right">
-                                    <h6 class="card-title mb-1">{{$customer->balance}}EUR</h6>
+                                    <h6 class="card-title mb-1">{{$balance}}EUR</h6>
                                 </div>
                             </div>
 						</div>
@@ -40,7 +43,7 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">  
                     <div>
-                        <h5 class="main-profile-name">{{$customer->first_name}}   {{$customer->last_name}}</h5>
+                        <h5 class="main-profile-name"># {{ $customer->id }}    {{$customer->first_name}}   {{$customer->last_name}}</h5>
                         <p class="main-profile-name-text">{{$customer->name}}</p>
                     </div>
                     <h6>Bio</h6>
@@ -132,10 +135,142 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="tab3">  
-                    3
+                <div class="table-responsive">
+                    <table class="table text-md-nowrap" id="transactions">
+                        <thead>
+                            <tr>
+                                <th class="wd-15p border-bottom-0">ID</th>
+                                <th class="wd-15p border-bottom-0">DATE</th>
+                                <th class="wd-20p border-bottom-0">TYPE</th>
+                                <th class="wd-15p border-bottom-0">DESCRIPTION</th>
+                                <th class="wd-10p border-bottom-0">AMOUNT</th>
+                                <th class="wd-25p border-bottom-0">BALANCE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($transactions as $transaction)
+                            <tr>
+                                <td>{{ $transaction->id }}</td>
+                                <td>{{ $transaction->created_at }}</td>
+                                <td>{{ $transaction->type }}</td>
+                                <td>{{ $transaction->description }}</td>
+                                <td>{{ $transaction->amount }}EUR</td>
+                                <td>{{ $transaction->balance }}EUR</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="add-transaction" style="margin-top: 25px">
+                    <h4>Add Transaction</h4>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="main-toggle main-toggle-success" id="manualButton" onclick="manualTransaction()">
+                                    <span></span>
+                                </div>
+                                Manual Transaction
+                            </div>
+                            <div class="col-md-2">
+                                <div class="main-toggle main-toggle-success" id="cashOnButton" onclick="cashOnDelievery()">
+                                    <span></span>
+                                </div>
+                                Cash on Delivery
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <button class="btn btn-success"  type="button"  id="transactionButton">Start Transaction</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12" style="padding: 10px; border: 1px solid black" >
+                        <div class="transaction-box">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <h5>Date</h5>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                Date:
+                                            </div>
+                                        </div><input class="form-control" id="dateMask" placeholder="MM/DD/YYYY" type="text" >
+                                    </div>
+                                </div>
+                                <div class="col-md-2 manual">
+                                    <h5>Order Number</h5>
+                                    <div class="input-group">
+                                        <input class="form-control"  type="text" id="order">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 cash" style="display: none">
+                                    <h5>Product Price</h5>
+                                    <div class="input-group">
+                                        <input class="form-control"  type="text" id="productPrice" >
+                                    </div>
+                                </div>
+                                <div class="col-md-2 manual">
+                                    <h5>Zone</h5>
+                                    <div class="input-group">
+                                        <select class="form-control"  type="text" id="zone">
+                                            <option value="1">City A</option>
+                                            <option value="2">City B</option>
+                                            <option value="3">City C</option>    
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 manual">
+                                    <h5>Weight</h5>
+                                    <div class="input-group">
+                                        <input class="form-control"  type="text" id="weight">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <h5>Description</h5>
+                                    <div class="input-group">
+                                        <input class="form-control"  type="text" id="description">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <h5>Total</h5>
+                                    <div class="input-group">
+                                        <input class="form-control"  type="text"  id="totalValue">
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
                 </div>
                 <div class="tab-pane" id="tab4">  
-                    4
+                <div class="table-responsive">
+                    <table class="table text-md-nowrap" id="invoices">
+                        <thead>
+                            <tr>
+                                <th class="wd-15p border-bottom-0">INVOICE NUMBER</th>
+                                <th class="wd-15p border-bottom-0">DATE</th>
+                                <th class="wd-20p border-bottom-0">INVOICE DESCRIPTION</th>
+                                <th class="wd-15p border-bottom-0">INVOICE TOTAL</th>
+                                <th class="wd-10p border-bottom-0">INVOICE RELATED TRANSACTION</th>
+                                <th class="wd-25p border-bottom-0">INVOICE DOWNLOAD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($invoices as $invoice) 
+                            <tr>
+                                <td>{{ $invoice->id }}</td>
+                                <td>{{ $invoice->created_at->format('d/m/Y') }}</td>
+                                <td>{{ $invoice->description }}</td>
+                                <td>{{ $invoice->amount }}</td>
+                                <td>{{ $invoice->transaction?"payment":"add_fund" }}</td>
+                                <td><a href="/admin/invoices/pdf/{{$customer->id}}/{{$invoice->id}}"><i class="far fa-file-alt"></i></a></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>    
                 </div>
                 <div class="tab-pane" id="tab5">  
                     5
@@ -143,5 +278,108 @@
             </div>              
             </div>
         </div>
+        <script>
+            $(document).ready(function(){
+                $('#transactionButton').click(() => {
+                    var description = $('#description').val();
+                    var date = $('#date').val();
+                    var amount = $('#totalValue').val();
+                    if(amount == '' || description == "") {
+                        alert('warning!');
+                        return
+                    }
+                    $.ajax({
+                        url: '/admin/customers/addTransaction',
+                        method: 'post',
+                        data: {
+                            amount: amount,
+                            description: description,
+                            _token: '{{csrf_token()}}',
+                            customer_id: '{{$customer->id}}'
+                        },
+                        success: (res) => {
+                            if(res.status) {
+                                window.location.reload();
+                            } else {
+                                alert(res.message);
+                            }
+                        }
+                    })
+                })
+            })
+
+            function manualTransaction() {
+               if($('#manualButton').hasClass('on')) {
+                   $('.manual').css('display', 'block');
+
+               } else {
+                $('.manual').css('display', 'none')
+               }
+            }
+
+            function cashOnDelievery() {
+                if($('#cashOnButton').hasClass('on')) {
+                   $('.cash').css('display', 'none');
+
+               } else {
+                $('.cash').css('display', 'block')
+               }
+            }
+
+            function totalValueChange() {
+                var totalValue = 0;
+                var productPrice = $('#productPrice').val();
+                var zone = $('#zone').val();
+                var weight = $('#weight').val();
+                console.log(productPrice, zone, weight);
+                if(weight == "") { 
+                    return;
+                }
+                switch (zone) {
+                    case "1":
+                        totalValue = caculate(weight, 3, 5, 10 , 1);
+                        break;
+                    case "2":
+                        totalValue = caculate(weight, 2, 4, 8 , 2);
+                        break;
+                    case "3":
+                        totalValue = caculate(weight, 4, 8, 12 , 2);
+                        break;
+                    default:
+                        console.log(1)
+                }
+
+                if(productPrice !== '') {
+                    totalValue =+ productPrice*0.05;
+                }
+                $('#totalValue').val(totalValue);
+
+            }
+
+            $('#productPrice').keyup((e) => {
+                totalValueChange();
+            })
+
+            $('#zone').change((e) => {
+                totalValueChange();
+            })
+
+            $('#weight').keyup((e) => {
+                totalValueChange();
+            })
+
+            function caculate(value, firstValue, secondValue, fifthValue, extraValue) {
+                var totalValue = 0;
+                if(value % 1) {
+                    totalValue += extraValue;
+                }
+                value = parseInt(value);
+                totalValue += (fifthValue * parseInt(value/5)); 
+                totalValue += (secondValue * (parseInt((value%5)/2)));
+                totalValue += (firstValue * ((value%5)%2));
+                return totalValue;
+            }
+
+        </script>
     </div>
 @endsection
