@@ -74,6 +74,9 @@
                                         <button class="btn btn-info" type="button"><i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i> &nbsp;
                                         <i class="fab fa-cc-mastercard"></i></button>
                                     </span>
+                                    <span>
+                                        <a class="btn btn-danger btn-block" style="margin-left: 25px" href="{{route('delete-card', $card->id)}}">Delete</a>
+                                    </span>
                                 </div>    
                                 @endforeach
                                 </div>

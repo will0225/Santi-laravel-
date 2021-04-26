@@ -29,6 +29,7 @@ Route::redirect('/', '/login');
 Route::get('/billing', [Billing::class, 'index'])->middleware('auth');
 Route::post('/billing', [Billing::class, 'makePayment'])->middleware('auth')->name('make-payment');
 Route::post('/cards', [Billing::class, 'addCreditCard'])->middleware('auth')->name('add-card');
+Route::get('/cards/{id}', [Billing::class, 'deleteCard'])->middleware('auth')->name('delete-card');
 Route::get('/invoices/pdf/{id}', [Billing::class, 'createInvoicePdf'])->middleware('auth')->name('createInvoicePdf');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/account', [AccountController::class, 'index'])->middleware('auth');

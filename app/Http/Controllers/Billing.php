@@ -91,6 +91,11 @@ class Billing extends Controller
         return back()->with('success', 'Added successfully made!');
     }
 
+    public function deleteCard($id) {
+        Card::where('id', $id)->delete();
+        return back()->with('success', 'Deleted successfully made!');
+    }
+
     public function createInvoicePdf(Request $request, $id) {
       
       $user = Auth::user();
@@ -107,4 +112,5 @@ class Billing extends Controller
       return $pdf->download('pdf_file.pdf');
 
     }
+
 }
