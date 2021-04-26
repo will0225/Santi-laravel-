@@ -5,8 +5,6 @@
         <div class="row row-sm">
             <div class="col-lg-12 col-md-12">
 				<div class="card" id="basic-alert" style="margin-top: 25px">
-                    
-
 					<div class="card-body" style="padding: 0">
 						<div style="padding-left: 10%; padding-right: 10%;margin-top: 60px; margin-bottom: 30px;">
                             <div class="row">
@@ -39,8 +37,8 @@
 				    </div>
 			    </div>
 		    </div>
-            <div class="panel-body tabs-menu-body main-content-body-right" style="padding-left: 10%; padding-right: 10%; width: 100%">
-            <div class="tab-content">
+            <div class="panel-body tabs-menu-body main-content-body-right" style="padding-left: 10%; padding-right: 10%; width: 100%; margin-bottom: 200px">
+                <div class="tab-content">
                 <div class="tab-pane active" id="tab1">  
                     <div>
                         <h5 class="main-profile-name"># {{ $customer->id }}    {{$customer->first_name}}   {{$customer->last_name}}</h5>
@@ -135,33 +133,73 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="tab3">  
-                <div class="table-responsive">
-                    <table class="table text-md-nowrap" id="transactions">
-                        <thead>
-                            <tr>
-                                <th class="wd-15p border-bottom-0">ID</th>
-                                <th class="wd-15p border-bottom-0">DATE</th>
-                                <th class="wd-20p border-bottom-0">TYPE</th>
-                                <th class="wd-15p border-bottom-0">DESCRIPTION</th>
-                                <th class="wd-10p border-bottom-0">AMOUNT</th>
-                                <th class="wd-25p border-bottom-0">BALANCE</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($transactions as $transaction)
-                            <tr>
-                                <td>{{ $transaction->id }}</td>
-                                <td>{{ $transaction->created_at }}</td>
-                                <td>{{ $transaction->type }}</td>
-                                <td>{{ $transaction->description }}</td>
-                                <td>{{ $transaction->amount }}EUR</td>
-                                <td>{{ $transaction->balance }}EUR</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table text-md-nowrap" id="transactions">
+                            <thead>
+                                <tr>
+                                    <th class="wd-15p border-bottom-0">ID</th>
+                                    <th class="wd-15p border-bottom-0">DATE</th>
+                                    <th class="wd-20p border-bottom-0">TYPE</th>
+                                    <th class="wd-15p border-bottom-0">DESCRIPTION</th>
+                                    <th class="wd-10p border-bottom-0">AMOUNT</th>
+                                    <th class="wd-25p border-bottom-0">BALANCE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($transactions as $transaction)
+                                <tr>
+                                    <td>{{ $transaction->id }}</td>
+                                    <td>{{ $transaction->created_at }}</td>
+                                    <td>{{ $transaction->type }}</td>
+                                    <td>{{ $transaction->description }}</td>
+                                    <td>{{$transaction->type == 'add_fund'?'+':'-'}}{{ $transaction->amount }}EUR</td>
+                                    <td>{{ $transaction->balance }}EUR</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="add-transaction" style="margin-top: 25px">
+    
+                <div class="tab-pane" id="tab4">  
+                    <div class="table-responsive">
+                        <table class="table text-md-nowrap" id="invoices">
+                            <thead>
+                                <tr>
+                                    <th class="wd-15p border-bottom-0">INVOICE NUMBER</th>
+                                    <th class="wd-15p border-bottom-0">DATE</th>
+                                    <th class="wd-20p border-bottom-0">INVOICE DESCRIPTION</th>
+                                    <th class="wd-15p border-bottom-0">INVOICE TOTAL</th>
+                                    <th class="wd-10p border-bottom-0">INVOICE RELATED TRANSACTION</th>
+                                    <th class="wd-25p border-bottom-0">INVOICE DOWNLOAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($invoices as $invoice) 
+                                <tr>
+                                    <td>{{ $invoice->id }}</td>
+                                    <td>{{ $invoice->created_at->format('d/m/Y') }}</td>
+                                    <td>{{ $invoice->description }}</td>
+                                    <td>{{ $invoice->amount }}</td>
+                                    <td>{{ $invoice->transaction?"payment":"add_fund" }}</td>
+                                    <td><a href="/admin/invoices/pdf/{{$customer->id}}/{{$invoice->id}}"><i class="far fa-file-alt"></i></a></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>    
+                </div>
+                <div class="tab-pane" id="tab5">  
+                    5
+                </div>
+            </div>              
+        </div>
+        <div class="add-transaction" style="margin-top: 25px; position: fixed; bottom: 0;background: #bfc2e0;
+                    z-index: 999;
+                    border: 1px solid black;
+                    padding: 15px;
+                    width: 100%
+                ">
                     <h4>Add Transaction</h4>
                     <div class="col-md-12 col-xs-12">
                         <div class="row">
@@ -237,47 +275,11 @@
                                         <input class="form-control"  type="text"  id="totalValue">
                                     </div>
                                 </div>
-                               
                             </div>
                         </div>
                     </div>
-                    
-                </div>
-                </div>
-                <div class="tab-pane" id="tab4">  
-                <div class="table-responsive">
-                    <table class="table text-md-nowrap" id="invoices">
-                        <thead>
-                            <tr>
-                                <th class="wd-15p border-bottom-0">INVOICE NUMBER</th>
-                                <th class="wd-15p border-bottom-0">DATE</th>
-                                <th class="wd-20p border-bottom-0">INVOICE DESCRIPTION</th>
-                                <th class="wd-15p border-bottom-0">INVOICE TOTAL</th>
-                                <th class="wd-10p border-bottom-0">INVOICE RELATED TRANSACTION</th>
-                                <th class="wd-25p border-bottom-0">INVOICE DOWNLOAD</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($invoices as $invoice) 
-                            <tr>
-                                <td>{{ $invoice->id }}</td>
-                                <td>{{ $invoice->created_at->format('d/m/Y') }}</td>
-                                <td>{{ $invoice->description }}</td>
-                                <td>{{ $invoice->amount }}</td>
-                                <td>{{ $invoice->transaction?"payment":"add_fund" }}</td>
-                                <td><a href="/admin/invoices/pdf/{{$customer->id}}/{{$invoice->id}}"><i class="far fa-file-alt"></i></a></td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>    
-                </div>
-                <div class="tab-pane" id="tab5">  
-                    5
-                </div>
-            </div>              
-            </div>
         </div>
+    </div>
         <script>
             $(document).ready(function(){
                 $('#transactionButton').click(() => {

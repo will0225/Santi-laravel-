@@ -55,10 +55,11 @@ class Billing extends Controller
             "type"=> "add_fund",
             "balance" => $transactionBalance
         ]);
-       
+        // dd($request->amount);
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        
         $result = Stripe\Charge::create ([
-                "amount" => $request->amount,
+                "amount" => 100 * $request->amount,
                 "currency" => "eur",
                 "source" => $request->stripeToken,
                 "description" => $request->description 
