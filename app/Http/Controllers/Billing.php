@@ -12,6 +12,7 @@ use App\Models\Transaction;
 use Illuminate\Support\Facades\DB;
 use App\Models\Invoice;
 use PDF;
+use App\Models\Card;
 
 class Billing extends Controller
 {
@@ -22,7 +23,8 @@ class Billing extends Controller
     function index() {
         $user = Auth::user();
         $invoices = $user->invoices;
-        return view('billing.index', [ "invoices" => $invoices ]);
+        $cards = $user->cards;
+        return view('billing.index', [ "invoices" => $invoices, "cards" => $cards ]);
     }
 
     public function makePayment(Request $request)
@@ -74,6 +76,19 @@ class Billing extends Controller
         ]);
 
         return back()->with('success', 'Payment successfully made.');
+    }
+
+    public function addCreditCard(Request $request) {
+        $user = Auth::user();
+        Card::create([
+            "user_id"=> $user->id,
+            "name"=> $request->name,
+            "card_number"=> $request->card_number,
+            "exp_month"=> $request->exp_month,
+            "exp_year"=> $request->exp_year,
+            "cvc"=> $request->cvc
+        ]);
+        return back()->with('success', 'Added successfully made!');
     }
 
     public function createInvoicePdf(Request $request, $id) {

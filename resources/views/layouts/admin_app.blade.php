@@ -84,11 +84,11 @@
 		<div>
 
 			<!-- main-header -->
-			<div class="main-header sticky side-header nav nav-item">
+			<div class="main-header sticky side-header nav nav-item" style="background: #1a1a1a">
 				<div class="container-fluid">
 					<div class="main-header-left ">
 						<div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
-                            <a href="/"><img src="../../assets/img/brand/logo.png" class="mobile-logo" alt="logo"></a>
+                            <a href="/"><img src="../../assets/img/brand/logo-white.png" class="mobile-logo" alt="logo"></a>
 						</div>
 					</div>
 					<div class="main-header-center">
@@ -96,13 +96,15 @@
 							<a href="/"><img src="../../assets/img/brand/logo.png" class="mobile-logo" alt="logo"></a>
 						</div> -->
                         <nav class="nav main-nav-line flex-column flex-md-row" style="padding-left: 30px;">
-                            <a class="nav-link"  href="/admin/customers">CUSTOMERS</a>
-                            <a class="nav-link"  href="/admin/invoices">INVOICES</a>
-                            <a class="nav-link"  href="/admin/management">MANAGEMENT</a>
+                            <a class="nav-link"  href="/admin/customers" style="color: white">CUSTOMERS</a>
+                            <a class="nav-link"  href="/admin/invoices" style="color: white">INVOICES</a>
+                            <a class="nav-link"  href="/admin/management" style="color: white">MANAGEMENT</a>
                         </nav>
 					</div>
 					<div class="main-header-right">
 						<div class="nav nav-item  navbar-nav-right ml-auto">
+						<span style="color: white;
+    							margin-top: 16px;">{{Auth::user()->name}}</span>
 							<!-- <form class="navbar-form nav-item my-auto d-lg-none" role="search">
 								<div class="input-group nav-item my-auto">
 									<input type="text" class="form-control" placeholder="Search">
@@ -123,16 +125,20 @@
 							<div class="dropdown main-profile-menu nav nav-item nav-link">
 								<a class="profile-user" href=""><img alt="" src="../../assets/img/faces/5.jpg"></a>
 								<div class="dropdown-menu dropdown-menu-arrow animated fadeInUp">
-									<div class="main-header-profile header-img">
-										<div class="main-img-user"><img alt="" src="../../assets/img/faces/5.jpg"></div>
-										<h6>Elizabeth Jane</h6><span>Premium Member</span>
+								<div class="main-header-profile header-img" style="
+										    background-color: red;
+												background-image: linear-gradient(
+											0deg
+											, red, #fea31f);
+									">
+										<div class="main-img-user"><img alt="" src="../assets/img/faces/5.jpg"></div>
+										<h6>{{Auth::user()->name}}</h6><span></span>
 									</div>
-									<a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
-									<a class="dropdown-item" href=""><i class="far fa-edit"></i> Edit Profile</a>
+									<a class="dropdown-item" href="/account"><i class="far fa-user" ></i> My Account</a>
 									<a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a>
-									<a class="dropdown-item" href=""><i class="fas fa-sliders-h"></i> Account Settings</a>
-									<a class="dropdown-item" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+									<a class="dropdown-item"  
+									onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+									><i class="fas fa-sign-out-alt"></i> Sign Out</a>
 			
 									<form id="logout-form" action="{{ route('logout') }}" method="POST"
 										style="display: none;">

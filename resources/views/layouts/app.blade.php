@@ -77,8 +77,10 @@
 
 		<!-- main-sidebar opened -->
 		<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-		<aside class="app-sidebar sidebar-scroll ">
-			<div class="main-sidebar-header">
+		<aside class="app-sidebar sidebar-scroll " 
+		style="background-color: red;
+    			background-image: linear-gradient(0deg, red, #fea31f);">
+			<div class="main-sidebar-header" style="background: transparent">
 				<a class=" desktop-logo logo-light" href="index.html"><img src="../assets/img/brand/logo.png" class="main-logo" alt="logo"></a>
 				<a class=" desktop-logo logo-dark" href="index.html"><img src="../assets/img/brand/logo-white.png" class="main-logo dark-theme" alt="logo"></a>
 				<a class="logo-icon mobile-logo icon-light" href="index.html"><img src="../assets/img/brand/favicon.png" class="logo-icon" alt="logo"></a>
@@ -88,24 +90,27 @@
 
 				<ul class="side-menu circle">
 					<li class="slide">
-						<a class="side-menu__item" href="/dashboard"><i class="side-menu__icon ti-desktop"></i><span class="side-menu__label">Dashboard</span></a>
+						<a class="side-menu__item" href="/dashboard"><i class="side-menu__icon ti-desktop"></i><span class="side-menu__label">Escritorio</span></a>
 					</li>
 					<li class="slide">
-						<a class="side-menu__item" href="/billing"><i class="side-menu__icon ti-package"></i><span class="side-menu__label">Billing</span></a>
+						<a class="side-menu__item" href="/billing"><i class="side-menu__icon ti-package"></i><span class="side-menu__label">Facturación</span></a>
 					</li>
 
                     <li class="slide">
-						<a class="side-menu__item" href="/account"><i class="side-menu__icon ti-package"></i><span class="side-menu__label">Account</span></a>
-					</li>
-					<li class="slide">
-						<a class="side-menu__item" href="#" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"><i class="side-menu__icon ti-package"></i><span class="side-menu__label">Logout</span></a>
-						<form id="logout-form" action="{{ route('logout') }}" method="POST"
-                            style="display: none;">
-                            @csrf
-                        </form>
+						<a class="side-menu__item" href="/account"><i class="side-menu__icon ti-user"></i><span class="side-menu__label">Cuenta</span></a>
 					</li>
 				</ul>
+			</div>
+			<div style="position: absolute; bottom: 50px; width: 100%; padding-left: 10px; padding-right: 10px;">
+				<button class="btn btn-default" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+					style="background-color: white; color: #e81c75bf; width: 100%"
+				>
+					<i class="fas fa-sign-out-alt"></i>Cerrar sesión
+				</button>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST"
+					style="display: none;">
+					@csrf
+				</form>
 			</div>
 		</aside>
 		<!-- main-sidebar -->
@@ -114,17 +119,17 @@
 		<div class="main-content app-content">
 
 			<!-- main-header -->
-			<div class="main-header sticky side-header nav nav-item">
+			<div class="main-header sticky side-header nav nav-item" style="background: #fea31f">
 				<div class="container-fluid">
 					<div class="main-header-left ">
 						<div class="app-sidebar__toggle mobile-toggle" data-toggle="sidebar">
 							<a class="open-toggle" href="#"><i class="header-icons" data-eva="menu-outline"></i></a>
 							<a class="close-toggle" href="#"><i class="header-icons" data-eva="close-outline"></i></a>
 						</div>
-						<div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
+						<!-- <div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
 							<input type="search" class="form-control" placeholder="Search for anything...">
 							<button class="btn"><i class="fas fa-search"></i></button>
-						</div>
+						</div> -->
 					</div>
 					<div class="main-header-center">
 						<div class="responsive-logo">
@@ -133,6 +138,8 @@
 					</div>
 					<div class="main-header-right">
 						<div class="nav nav-item  navbar-nav-right ml-auto">
+							<span style="color: white;
+    							margin-top: 16px;">{{Auth::user()->name}}</span>
 							<form class="navbar-form nav-item my-auto d-lg-none" role="search">
 								<div class="input-group nav-item my-auto">
 									<input type="text" class="form-control" placeholder="Search">
@@ -153,15 +160,20 @@
 							<div class="dropdown main-profile-menu nav nav-item nav-link">
 								<a class="profile-user" href=""><img alt="" src="../assets/img/faces/5.jpg"></a>
 								<div class="dropdown-menu dropdown-menu-arrow animated fadeInUp">
-									<div class="main-header-profile header-img">
+									<div class="main-header-profile header-img" style="
+										    background-color: red;
+												background-image: linear-gradient(
+											0deg
+											, red, #fea31f);
+									">
 										<div class="main-img-user"><img alt="" src="../assets/img/faces/5.jpg"></div>
-										<h6>Elizabeth Jane</h6><span>Premium Member</span>
+										<h6>{{Auth::user()->name}}</h6><span></span>
 									</div>
-									<a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>
-									<a class="dropdown-item" href=""><i class="far fa-edit"></i> Edit Profile</a>
+									<a class="dropdown-item" href="/account"><i class="far fa-user" ></i> My Account</a>
 									<a class="dropdown-item" href=""><i class="far fa-clock"></i> Activity Logs</a>
-									<a class="dropdown-item" href=""><i class="fas fa-sliders-h"></i> Account Settings</a>
-									<a class="dropdown-item" href="page-signin.html"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+									<a class="dropdown-item"  
+									onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+									><i class="fas fa-sign-out-alt"></i> Sign Out</a>
 								</div>
 							</div>
 							<!-- <div class="dropdown main-header-message right-toggle">

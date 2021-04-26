@@ -9,7 +9,7 @@
 						<div style="padding-left: 10%; padding-right: 10%;margin-top: 60px; margin-bottom: 30px;">
                             <div class="row">
                                 <div class="col-md-6 col-lg-6" style="text-align: left">
-                                    <h6 class="card-title mb-1">Dashboard</h6>
+                                    <h6 class="card-title mb-1">Escritorio</h6>
                                 </div>
                                 <div class="col-md-6 col-lg-6" style="text-align: right">
                                     <h6 class="card-title mb-1">{{ $balance }}EUR</h6>
@@ -22,8 +22,8 @@
                                     <div class="tabs-menu1">
                                     <!-- Tabs -->
                                         <ul class="nav panel-tabs main-nav-line">
-                                            <li><a href="#tab1" class="nav-link active" data-toggle="tab">Transactions</a></li>
-                                            <li><a href="#tab2" class="nav-link" data-toggle="tab">Cash on Delivery Credits</a></li>
+                                            <li><a href="#tab1" class="nav-link active" data-toggle="tab">Transacciones</a></li>
+                                            <li><a href="#tab2" class="nav-link" data-toggle="tab">Saldo de contra reembolsa</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -39,12 +39,12 @@
 									<table class="table text-md-nowrap" id="transactions">
 										<thead>
 											<tr>
-												<th class="wd-15p border-bottom-0">ID</th>
-												<th class="wd-15p border-bottom-0">DATE</th>
-												<th class="wd-20p border-bottom-0">TYPE</th>
-												<th class="wd-15p border-bottom-0">DESCRIPTION</th>
-												<th class="wd-10p border-bottom-0">AMOUNT</th>
-												<th class="wd-25p border-bottom-0">BALANCE</th>
+												<th class="wd-15p border-bottom-0">#ID</th>
+												<th class="wd-15p border-bottom-0">Fecha</th>
+												<th class="wd-20p border-bottom-0">Tipo</th>
+												<th class="wd-15p border-bottom-0">Descripción</th>
+												<th class="wd-10p border-bottom-0">Importe</th>
+												<th class="wd-25p border-bottom-0">Balance</th>
 											</tr>
 										</thead>
 										<tbody>

@@ -14,6 +14,8 @@ use Laravel\Cashier\Billable;
 use App\Models\Balance;
 use App\Models\Transaction;
 use App\Models\Invoice;
+use App\Models\Card;
+
 
 class User extends Authenticatable
 {
@@ -74,5 +76,9 @@ class User extends Authenticatable
 
     public function invoices() {
         return $this->hasMany(Invoice::class);
+    }
+
+    public function cards() {
+        return $this->hasMany(Card::class);
     }
 }
