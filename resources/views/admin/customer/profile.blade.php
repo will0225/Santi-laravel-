@@ -286,7 +286,7 @@
                     var description = $('#description').val();
                     var date = $('#date').val();
                     var amount = $('#totalValue').val();
-                    if(amount == '' || description == "") {
+                    if(amount == '' || description == "" || amount < 0.005) {
                         alert('warning!');
                         return
                     }
