@@ -80,20 +80,20 @@
 		<aside class="app-sidebar sidebar-scroll " 
 		style="background-color: red;
     			background-image: linear-gradient(0deg, red, #fea31f);">
-			<div class="main-sidebar-header" style="background: transparent">
-				<a class=" desktop-logo logo-light" href="index.html"><img src="../assets/img/brand/logo.png" class="main-logo" alt="logo"></a>
-				<a class=" desktop-logo logo-dark" href="index.html"><img src="../assets/img/brand/logo-white.png" class="main-logo dark-theme" alt="logo"></a>
+			<div class="main-sidebar-header" style="background: transparent; margin-top: 68px;">
+				<a class=" desktop-logo logo-light" href="/"><img src="../assets/img/brand/logo.png" class="main-logo" alt="logo"></a>
+				<a class=" desktop-logo logo-dark" href="/"><img src="../assets/img/brand/logo-white.png" class="main-logo dark-theme" alt="logo"></a>
 				<a class="logo-icon mobile-logo icon-light" href="index.html"><img src="../assets/img/brand/favicon.png" class="logo-icon" alt="logo"></a>
 				<a class="logo-icon mobile-logo icon-dark" href="index.html"><img src="../assets/img/brand/favicon-white.png" class="logo-icon dark-theme" alt="logo"></a>
 			</div>
-			<div class="main-sidebar-body circle-animation ">
+			<div class="main-sidebar-body circle-animation " style="margin-top: 154px;">
 
 				<ul class="side-menu circle">
 					<li class="slide">
 						<a class="side-menu__item" href="/dashboard"><i class="side-menu__icon ti-desktop"></i><span class="side-menu__label">Escritorio</span></a>
 					</li>
 					<li class="slide">
-						<a class="side-menu__item" href="/billing"><i class="side-menu__icon ti-package"></i><span class="side-menu__label">Facturación</span></a>
+						<a class="side-menu__item" href="/billing"><i class="side-menu__icon far fa-credit-card"></i><span class="side-menu__label">Facturación</span></a>
 					</li>
 
                     <li class="slide">
@@ -103,9 +103,9 @@
 			</div>
 			<div style="position: absolute; bottom: 50px; width: 100%; padding-left: 10px; padding-right: 10px;">
 				<button class="btn btn-default" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-					style="background-color: white; color: #e81c75bf; width: 100%"
+					style="border: 2px solid white;color: white; width: 100%"
 				>
-					<i class="fas fa-sign-out-alt"></i>Cerrar sesión
+					<i class="side-menu__icon fas fa-upload" style="margin-right: 4px;"></i>Cerrar sesión
 				</button>
 				<form id="logout-form" action="{{ route('logout') }}" method="POST"
 					style="display: none;">
