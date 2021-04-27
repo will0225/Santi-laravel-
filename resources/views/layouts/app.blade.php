@@ -122,10 +122,10 @@
 			<div class="main-header sticky side-header nav nav-item" style="background: #fea31f">
 				<div class="container-fluid">
 					<div class="main-header-left ">
-						<div class="app-sidebar__toggle mobile-toggle" data-toggle="sidebar">
+						<!-- <div class="app-sidebar__toggle mobile-toggle" data-toggle="sidebar">
 							<a class="open-toggle" href="#"><i class="header-icons" data-eva="menu-outline"></i></a>
 							<a class="close-toggle" href="#"><i class="header-icons" data-eva="close-outline"></i></a>
-						</div>
+						</div> -->
 						<!-- <div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
 							<input type="search" class="form-control" placeholder="Search for anything...">
 							<button class="btn"><i class="fas fa-search"></i></button>
@@ -906,11 +906,11 @@
 
 
 		<!-- Footer opened -->
-		<div class="main-footer ht-40">
+		<!-- <div class="main-footer ht-40">
 			<div class="container-fluid pd-t-0-f ht-100p">
 				<span>Copyright © 2021 <a href="#">westock</a>. Designed by <a href="/">westock</a> All rights reserved.</span>
 			</div>
-		</div>
+		</div> -->
 		<!-- Footer closed -->
 
 		<!-- Back-to-top -->

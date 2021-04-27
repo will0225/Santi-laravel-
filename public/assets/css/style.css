@@ -50733,4 +50733,9 @@ table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before
   .main-nav-line .nav-link.active {
     background: #fea31f;
   }
+
+
+  h6 {
+    font-family: 'Poppins Semibold'  !important;
+  }
 /*# sourceMappingURL=style.css.map */
