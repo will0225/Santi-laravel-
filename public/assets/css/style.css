@@ -50726,4 +50726,11 @@ table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before
 *::-ms-backdrop, .media-list.media.d-sm-flex {
   display: initial; }
 
+  .tabs-style-1 .main-nav-line .nav-link.active::before {
+    background: transparent !important;
+  }
+
+  .main-nav-line .nav-link.active {
+    background: #fea31f;
+  }
 /*# sourceMappingURL=style.css.map */

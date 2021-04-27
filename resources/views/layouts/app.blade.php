@@ -67,7 +67,7 @@
 
 	</head>
 
-	<body class="main-body app sidebar-mini Light-mode">
+	<body class="main-body app sidebar-mini Light-mode" style="background: white">
 
 		<!-- Loader -->
 		<div id="global-loader" class="light-loader">
@@ -908,13 +908,13 @@
 		<!-- Footer opened -->
 		<div class="main-footer ht-40">
 			<div class="container-fluid pd-t-0-f ht-100p">
-				<span>Copyright © 2020 <a href="#">Xino</a>. Designed by <a href="https://www.spruko.com/">Spruko</a> All rights reserved.</span>
+				<span>Copyright © 2021 <a href="#">westock</a>. Designed by <a href="/">westock</a> All rights reserved.</span>
 			</div>
 		</div>
 		<!-- Footer closed -->
 
 		<!-- Back-to-top -->
-		<a href="#top" id="back-to-top"><i class="la la-chevron-up"></i></a>
+		<!-- <a href="#top" id="back-to-top"><i class="la la-chevron-up"></i></a> -->
 
 		
 

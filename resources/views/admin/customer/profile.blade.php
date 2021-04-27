@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="tab2">  
-                    <div class="card">
+                    <div class="card" style="box-shadow: none">
                         <div class="card-body">
                             <div class="mb-4 main-content-label">Personal Information</div>
                             <form class="form-horizontal">
@@ -150,7 +150,7 @@
                                 <tr>
                                     <td>{{ $transaction->id }}</td>
                                     <td>{{ $transaction->created_at }}</td>
-                                    <td>{{ $transaction->type }}</td>
+                                    <td><button class="btn btn-outline-{{ $transaction->type == 'add_fund'?'success':'danger' }}">{{ $transaction->type == 'add_fund'?'SALDO':'PAGO' }}</button></td>
                                     <td>{{ $transaction->description }}</td>
                                     <td>{{$transaction->type == 'add_fund'?'+':'-'}}{{ $transaction->amount }}EUR</td>
                                     <td>{{ $transaction->balance }}EUR</td>

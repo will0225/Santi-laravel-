@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row row-sm">
             <div class="col-lg-12 col-md-12">
-				<div class="card" id="basic-alert" style="margin-top: 25px">
+				<div class="card" id="basic-alert" style="margin-top: 25px; box-shadow: none; border-bottom: 1px solid">
 					<div class="card-body" style="padding: 0">
 						<div style="padding-left: 10%; padding-right: 10%;margin-top: 60px; margin-bottom: 30px;">
                             <div class="row">
@@ -36,7 +36,7 @@
                         <div class="tab-pane active" id="tab1">
                             <!-- <div class="card-body"> -->
 								<div class="table-responsive">
-									<table class="table text-md-nowrap" id="transactions">
+									<table class="table text-md-nowrap" id="transactions" style="text-align: center">
 										<thead>
 											<tr>
 												<th class="wd-15p border-bottom-0">#ID</th>
@@ -52,9 +52,9 @@
 											<tr>
 												<td>{{ $transaction->id }}</td>
 												<td>{{ $transaction->created_at }}</td>
-												<td>{{ $transaction->type }}</td>
+												<td><button class="btn btn-outline-{{ $transaction->type == 'add_fund'?'success':'danger' }}">{{ $transaction->type == 'add_fund'?'SALDO':'PAGO' }}</button></td>
 												<td>{{ $transaction->description }}</td>
-												<td>{{ $transaction->amount }}EUR</td>
+												<td>{{ $transaction->type == 'add_fund'?'+':'-' }}{{ $transaction->amount }}EUR</td>
 												<td>{{ $transaction->balance }}EUR</td>
 											</tr>
 											@endforeach

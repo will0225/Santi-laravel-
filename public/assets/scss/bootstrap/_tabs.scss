@@ -3,7 +3,7 @@
 .tabs-style-1 .main-nav-line .nav-link {
   &.active::before {
     bottom: 0;
-    background: $primary;
+    background: 'transparent';
   }
 
   padding: 10px 18px 10px 18px;
@@ -90,6 +90,7 @@
   right: 0;
   height: 2px;
   width: auto;
+  background-color: 'transparent'  !important;
 }
 
 .tab_wrapper {

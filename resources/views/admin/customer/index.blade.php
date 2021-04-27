@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row row-sm">
             <div class="col-lg-12 col-md-12">
-				<div class="card" id="basic-alert" style="margin-top: 25px">
+				<div class="card" id="basic-alert" style="margin-top: 25px; box-shadow: none">
 					<div class="card-body" style="padding: 0">
 						<div style="padding-left: 10%; padding-right: 10%;margin-top: 60px; margin-bottom: 30px;">
                             <div id="customer-alert">
