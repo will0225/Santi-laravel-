@@ -77,9 +77,7 @@
 
 		<!-- main-sidebar opened -->
 		<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-		<aside class="app-sidebar sidebar-scroll " 
-		style="background-color: #fea31f;
-    			background-image: linear-gradient(0deg, #f470c41, #fea31f);background-position-y:70px;">
+		<aside class="app-sidebar sidebar-scroll">
 			<div class="main-sidebar-header" style="background: transparent; margin-top: 68px;">
 				<a class=" desktop-logo logo-light" href="/"><img src="../assets/img/brand/logo.png" class="main-logo" alt="logo"></a>
 				<a class=" desktop-logo logo-dark" href="/"><img src="../assets/img/brand/logo-white.png" class="main-logo dark-theme" alt="logo"></a>
@@ -138,7 +136,7 @@
 					</div>
 					<div class="main-header-right">
 						<div class="nav nav-item  navbar-nav-right ml-auto">
-							<span style="color: white;
+							<span style="color: white !important;
     							margin-top: 16px;">{{Auth::user()->name}}</span>
 							<form class="navbar-form nav-item my-auto d-lg-none" role="search">
 								<div class="input-group nav-item my-auto">

@@ -778,7 +778,7 @@ a.badge-dark.focus {
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   letter-spacing: .5px;
-  text-transform: uppercase; }
+    }
 
 .breadcrumb-style1 .breadcrumb-item a, .breadcrumb-style2 .breadcrumb-item a, .breadcrumb-style3 .breadcrumb-item a {
   color: #1c273c; }
@@ -1738,7 +1738,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
   font-weight: 700;
   color: #1c273c;
   font-size: 14px;
-  text-transform: uppercase; }
+    }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
   background-image: none;
@@ -5142,7 +5142,7 @@ a.close.disabled {
     font-weight: 700;
     font-size: 11px;
     letter-spacing: .5px;
-    text-transform: uppercase;
+     
     border-bottom-width: 1px;
     border-top-width: 0;
     padding: 0 15px 5px; }
@@ -5480,7 +5480,7 @@ a.tag-addon {
       cursor: pointer;
       font-weight: 500;
       padding: 8px 18px;
-      text-transform: uppercase;
+       
       border: 1px solid #f0f2f7;
       font-size: 1.05em;
       border-bottom: 0;
@@ -5504,7 +5504,7 @@ a.tag-addon {
     right: 0; }
     .tab_wrapper .controller span {
       padding: 8px 22px;
-      text-transform: uppercase;
+       
       display: inline-block; }
       .tab_wrapper .controller span.next {
         float: right;
@@ -5525,7 +5525,7 @@ a.tag-addon {
     .tab_wrapper .content_wrapper .accordian_header {
       display: none;
       padding: 10px 20px;
-      text-transform: uppercase;
+       
       font-weight: bold;
       border-top: 1px solid #f0f2f7;
       border-bottom: 1px solid #fff;
@@ -6074,7 +6074,7 @@ a.tag-addon {
   border-radius: 0; }
 
 .popover-header {
-  text-transform: uppercase;
+   
   font-size: 12px;
   font-weight: 600;
   color: #3b4863;
@@ -6655,7 +6655,7 @@ body {
     color: #8587a7;
     font-size: 11px;
     font-weight: 500;
-    text-transform: uppercase;
+     
     letter-spacing: 1px;
     border-bottom: 0; }
 
@@ -6755,7 +6755,7 @@ body {
   font-weight: 500;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
-  text-transform: uppercase;
+   
   color: #97a3b9;
   margin-bottom: 10px; }
   .main-content-breadcrumb span {
@@ -6790,7 +6790,7 @@ body {
 .main-content-label, .card-table-two .card-title, .card-dashboard-eight .card-title {
   color: #1c273c;
   font-weight: 700;
-  text-transform: uppercase;
+   
   line-height: 1;
   margin-bottom: 10px;
   letter-spacing: .2px; }
@@ -6798,7 +6798,7 @@ body {
 .main-content-label-sm {
   font-size: 10px;
   font-weight: 600;
-  text-transform: uppercase;
+   
   color: #97a3b9;
   letter-spacing: .5px; }
 
@@ -7174,7 +7174,7 @@ body {
     .card-dashboard-three .card-header p {
       margin-bottom: 10px;
       font-weight: 700;
-      text-transform: uppercase;
+       
       color: #1c273c; }
     .card-dashboard-three .card-header > small {
       font-size: 11px;
@@ -7919,7 +7919,7 @@ body {
     position: relative; }
   .card-dashboard-eleven .card-footer label {
     font-weight: 700;
-    text-transform: uppercase;
+     
     margin-bottom: 10px;
     color: #596882;
     display: block; }
@@ -8029,7 +8029,7 @@ body {
     font-size: 10px;
     font-weight: 500;
     letter-spacing: .5px;
-    text-transform: uppercase;
+     
     color: #97a3b9; }
   .main-content-header-right .media h6 {
     color: #1c273c;
@@ -8062,7 +8062,7 @@ body {
   .card-dashboard-calendar .card-title {
     color: #1c273c;
     font-weight: 700;
-    text-transform: uppercase;
+     
     margin-bottom: 15px; }
   .card-dashboard-calendar .card-body {
     padding: 0; }
@@ -8114,7 +8114,7 @@ body {
     border-bottom: 1px solid #e8e7ef;
     padding: 20px; }
   .card-dashboard-twelve .card-title {
-    text-transform: uppercase;
+     
     font-weight: 700;
     margin-bottom: 20px; }
     .card-dashboard-twelve .card-title span {
@@ -8149,7 +8149,7 @@ body {
         line-height: .9;
         font-size: 24px; }
     .card-dashboard-twelve .sales-overview label {
-      text-transform: uppercase;
+       
       font-size: 9px;
       font-weight: 700;
       letter-spacing: .5px;
@@ -8238,7 +8238,7 @@ body {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 1px;
-  text-transform: uppercase; }
+    }
   .chart-legend div {
     display: flex;
     align-items: center; }
@@ -8275,7 +8275,7 @@ body {
   position: relative; }
   .card-dashboard-twelve .flot-chart .flot-x-axis > div span:first-child {
     display: block;
-    text-transform: uppercase;
+     
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 500;
     font-size: 10px;
@@ -8309,7 +8309,7 @@ body {
   color: #1c273c;
   font-weight: 700;
   margin-bottom: 0;
-  text-transform: uppercase; }
+    }
 
 .main-media-date span {
   display: block;
@@ -8350,7 +8350,7 @@ body {
 .card-dashboard-thirteen .media-body label {
   font-weight: 700;
   font-size: 12px;
-  text-transform: uppercase;
+   
   margin-bottom: 0;
   display: block;
   letter-spacing: .5px; }
@@ -8375,7 +8375,7 @@ body {
   .card-dashboard-events .list-group-item:first-child, .card-dashboard-events .list-group-item:last-child {
     border-radius: 0; }
   .card-dashboard-events .list-group-item label {
-    text-transform: uppercase;
+     
     font-weight: 700;
     font-size: 10px;
     color: #596882;
@@ -8399,7 +8399,7 @@ body {
     font-size: 11px; }
     .card-dashboard-events .list-group-item small span {
       font-weight: 700;
-      text-transform: uppercase; }
+        }
 
 .card-dashboard-events .event-indicator {
   width: 10px;
@@ -8688,7 +8688,7 @@ body {
     background-color: transparent;
     padding: 20px 20px 0; }
   .main-content-body-dashboard-six .card-title {
-    text-transform: uppercase;
+     
     font-weight: 700; }
 
 .card-dashboard-donut .card-body {
@@ -9069,7 +9069,7 @@ body {
       font-weight: 700;
       font-size: 14px;
       color: #5965f9;
-      text-transform: uppercase;
+       
       margin-bottom: 5px;
       display: block;
       line-height: 1; }
@@ -9185,7 +9185,7 @@ body {
       .card-minimal-two .card-header-right .nav-link span:first-child {
         display: none; }
       .card-minimal-two .card-header-right .nav-link span:last-child {
-        text-transform: uppercase;
+         
         font-size: 11px;
         font-weight: 500; }
       .card-minimal-two .card-header-right .nav-link:hover, .card-minimal-two .card-header-right .nav-link:focus {
@@ -9314,7 +9314,7 @@ body {
 
 .card-bitcoin label {
   margin-bottom: 2px;
-  text-transform: uppercase;
+   
   font-weight: 500;
   font-size: 11px;
   letter-spacing: .5px;
@@ -9429,7 +9429,7 @@ body {
     .card-minimal-three .no-transactions-panel .icon-wrapper i {
       line-height: 0; }
   .card-minimal-three .no-transactions-panel h6 {
-    text-transform: uppercase;
+     
     font-weight: 700;
     font-size: 15px;
     color: #1c273c;
@@ -9476,7 +9476,7 @@ body {
     margin-top: 0; } }
 
 .card-crypto-portfolio .card-title {
-  text-transform: uppercase; }
+    }
 
 .card-crypto-portfolio .table {
   margin-bottom: 0; }
@@ -9538,7 +9538,7 @@ body {
     left: 10px;
     position: absolute;
     font-size: 10px;
-    text-transform: uppercase;
+     
     letter-spacing: 1px;
     z-index: 10; }
     .card-minimal-four .card-body-top a {
@@ -9790,7 +9790,7 @@ body {
   padding: 20px; }
   .card-dashboard-eighteen .card-title {
     font-weight: 700;
-    text-transform: uppercase; }
+      }
   .card-dashboard-eighteen .card-body {
     padding: 20px 0 34px;
     align-items: flex-start; }
@@ -9903,7 +9903,7 @@ body {
   margin-bottom: 0; }
 
 .card-dashboard-nineteen .card-header .btn, .card-dashboard-nineteen .card-header .sp-container button {
-  text-transform: uppercase;
+   
   font-weight: 500;
   font-size: 11px;
   letter-spacing: .5px;
@@ -9916,7 +9916,7 @@ body {
     font-size: 12px; } }
 
 .sp-container .card-dashboard-nineteen .card-header button {
-  text-transform: uppercase;
+   
   font-weight: 500;
   font-size: 11px;
   letter-spacing: .5px;
@@ -9925,7 +9925,7 @@ body {
   border-width: 2px; }
 
 .card-dashboard-nineteen .card-title {
-  text-transform: uppercase;
+   
   font-weight: 700;
   margin-bottom: 15px;
   color: #0040ff; }
@@ -9936,7 +9936,7 @@ body {
   align-items: center; }
   .card-dashboard-nineteen .chart-legend > div {
     position: relative;
-    text-transform: uppercase;
+     
     font-size: 10px;
     font-weight: 500;
     letter-spacing: .5px; }
@@ -9972,7 +9972,7 @@ body {
     transform: translate(18px, -25px);
     color: #fff;
     font-size: 10px;
-    text-transform: uppercase;
+     
     letter-spacing: 1px;
     opacity: .5; }
   .card-dashboard-nineteen .flot-chart .flot-y-axis {
@@ -10061,7 +10061,7 @@ body {
   align-items: center; }
   .card-dashboard-progress .progress-legend li {
     position: relative;
-    text-transform: uppercase;
+     
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -10485,7 +10485,7 @@ body {
   .card-dashboard-twentythree label {
     display: flex;
     align-items: center;
-    text-transform: uppercase;
+     
     font-weight: 500;
     font-size: 10px;
     line-height: 1;
@@ -10526,7 +10526,7 @@ body {
     width: 100%;
     height: 180px; }
     .card-dashboard-audience-metrics .flot-chart .flot-x-axis > div {
-      text-transform: uppercase;
+       
       font-size: 10px;
       font-weight: 700;
       color: #8587a7;
@@ -10656,7 +10656,7 @@ body {
   align-items: center;
   font-size: 10px;
   font-weight: 500;
-  text-transform: uppercase;
+   
   letter-spacing: .5px;
   line-height: .6; }
   .card-dashboard-twentyfour .chart-legend span {
@@ -10687,7 +10687,7 @@ body {
 
 .card-dashboard-twentyfive .card-label {
   display: block;
-  text-transform: uppercase;
+   
   font-size: 11px;
   font-weight: 500;
   letter-spacing: .5px;
@@ -10724,7 +10724,7 @@ body {
 
 .card-dashboard-twentysix .card-title {
   margin-bottom: 0;
-  text-transform: uppercase; }
+    }
 
 .card-dashboard-twentysix .chart-legend {
   display: flex;
@@ -10732,7 +10732,7 @@ body {
   .card-dashboard-twentysix .chart-legend > div {
     font-size: 10px;
     font-weight: 500;
-    text-transform: uppercase;
+     
     letter-spacing: .5px; }
     .card-dashboard-twentysix .chart-legend > div + div {
       margin-left: 15px; }
@@ -10773,7 +10773,7 @@ body {
   .card-dashboard-twentysix .flot-chart .flot-x-axis > div {
     font-size: 10px;
     letter-spacing: .5px;
-    text-transform: uppercase;
+     
     color: rgba(255, 255, 255, 0.75);
     transform: translateY(-20px); }
   .card-dashboard-twentysix .flot-chart .flot-y-axis > div {
@@ -10816,7 +10816,7 @@ body {
   margin-bottom: 10px;
   font-size: 10px;
   font-weight: 500;
-  text-transform: uppercase;
+   
   letter-spacing: .5px; }
 
 .main-media-list-reviews .media + .media {
@@ -11183,7 +11183,7 @@ body {
   color: #fff; }
 
 .dropdown-menu .dropdown-header {
-  text-transform: uppercase;
+   
   font-size: 0.73333333rem;
   color: #3f6ad8;
   font-weight: bold; }
@@ -11873,7 +11873,7 @@ body {
       padding-top: 6px; }
     .main-menu-sub-mega .nav > span {
       display: block;
-      text-transform: uppercase;
+       
       font-size: 10px;
       font-weight: 700;
       color: #1c273c;
@@ -11957,7 +11957,7 @@ body {
     .main-header-right .btn-social + .btn-social {
       margin-left: 10px; }
   .main-header-right .btn-buy {
-    text-transform: uppercase;
+     
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 11px;
     font-weight: 500;
@@ -13541,7 +13541,7 @@ object, embed, video {
 
 .mega-menubg.hor-mega-menu h3 {
   font-weight: 600;
-  text-transform: uppercase;
+   
   color: #343438;
   font-size: 14px;
   letter-spacing: .5px;
@@ -13949,7 +13949,7 @@ object, embed, video {
   .main-navbar .nav-label {
     font-size: 10px;
     font-weight: 500;
-    text-transform: uppercase;
+     
     color: #8587a7;
     letter-spacing: 1px;
     display: block;
@@ -14070,7 +14070,7 @@ object, embed, video {
       margin: 0; }
       .main-navbar .nav-sub-mega .nav li:not(.nav-sub-item) {
         display: block;
-        text-transform: uppercase;
+         
         font-size: 12px;
         font-weight: 700;
         color: #1c273c;
@@ -14319,7 +14319,7 @@ object, embed, video {
   display: none; }
 
 .main-navbar-two .nav-link {
-  text-transform: uppercase;
+   
   font-size: 13px;
   font-weight: 700; }
 
@@ -14357,7 +14357,7 @@ object, embed, video {
     font-weight: 700; }
 
 .main-navbar-three .nav-link {
-  text-transform: uppercase;
+   
   font-size: 13px;
   font-weight: 700;
   color: #3b4863;
@@ -14840,7 +14840,7 @@ object, embed, video {
     margin-bottom: 100px; }
     .main-home-content p:last-of-type .btn, .main-home-content p:last-of-type .sp-container button {
       flex: 1;
-      text-transform: uppercase;
+       
       font-size: 11px;
       font-weight: 500;
       min-height: inherit;
@@ -14873,7 +14873,7 @@ object, embed, video {
 
 .sp-container .main-home-content p:last-of-type button {
   flex: 1;
-  text-transform: uppercase;
+   
   font-size: 11px;
   font-weight: 500;
   min-height: inherit;
@@ -14920,7 +14920,7 @@ object, embed, video {
     display: block;
     padding: 20px; }
   .main-content-choose-demo .title-label {
-    text-transform: uppercase;
+     
     letter-spacing: 1px;
     font-size: 10px;
     color: #5965f9;
@@ -14961,7 +14961,7 @@ object, embed, video {
       opacity: 0;
       transition: all 0.2s ease-in-out; }
       .main-content-choose-demo .card figcaption .btn, .main-content-choose-demo .card figcaption .sp-container button {
-        text-transform: uppercase;
+         
         letter-spacing: 1.5px;
         font-size: 11px;
         font-weight: 500;
@@ -15023,7 +15023,7 @@ object, embed, video {
     transition: none; } }
 
 .sp-container .main-content-choose-demo .card figcaption button {
-  text-transform: uppercase;
+   
   letter-spacing: 1.5px;
   font-size: 11px;
   font-weight: 500;
@@ -15043,7 +15043,7 @@ object, embed, video {
     margin-bottom: 10px; }
   .main-content-choose-demo .card.coming-soon h6 {
     margin-bottom: 0;
-    text-transform: uppercase;
+     
     font-weight: 800;
     letter-spacing: 1px; }
 
@@ -15258,7 +15258,7 @@ object, embed, video {
   width: 200px; }
   .main-content-left-components .component-item label {
     display: block;
-    text-transform: uppercase;
+     
     font-size: 12px;
     font-weight: 700;
     letter-spacing: .5px; }
@@ -15283,7 +15283,7 @@ object, embed, video {
   margin-bottom: 0; }
   .main-breadcrumbs .breadcrumb-item {
     font-size: 10px;
-    text-transform: uppercase;
+     
     letter-spacing: .5px;
     font-weight: 700; }
     .main-breadcrumbs .breadcrumb-item a {
@@ -15358,7 +15358,7 @@ object, embed, video {
     position: absolute;
     top: 5px;
     right: 5px;
-    text-transform: uppercase;
+     
     font-weight: 500;
     font-size: 9px;
     letter-spacing: normal;
@@ -15687,7 +15687,7 @@ div.dataTables_wrapper div.dataTables_filter {
       content: '\f3d1';
       right: 0; }
     .datetimepicker table th.switch {
-      text-transform: uppercase;
+       
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 1px;
@@ -15716,7 +15716,7 @@ div.dataTables_wrapper div.dataTables_filter {
     height: 38px; }
   .datetimepicker .datetimepicker-days table thead tr:last-child th {
     height: 25px;
-    text-transform: uppercase;
+     
     color: #596882;
     font-weight: 700;
     font-size: 11px; }
@@ -15753,7 +15753,7 @@ div.dataTables_wrapper div.dataTables_filter {
       right: 0; }
     .main-datetimepicker > .datepicker_header span {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      text-transform: uppercase; }
+        }
   .main-datetimepicker > .datepicker_inner_container {
     border-radius: 0;
     box-shadow: none;
@@ -15777,7 +15777,7 @@ div.dataTables_wrapper div.dataTables_filter {
         height: 100%; }
       .main-datetimepicker > .datepicker_inner_container > .datepicker_calendar th {
         font-size: 11px;
-        text-transform: uppercase;
+         
         color: #1c273c;
         font-weight: 700;
         text-align: center;
@@ -15815,7 +15815,7 @@ div.dataTables_wrapper div.dataTables_filter {
   font-weight: 500; }
 
 .picker-cell__header {
-  text-transform: uppercase;
+   
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: .4px; }
@@ -15960,7 +15960,7 @@ div.dataTables_wrapper div.dataTables_filter {
       font-size: 10px;
       font-weight: 500;
       letter-spacing: .5px;
-      text-transform: uppercase;
+       
       color: #fff;
       top: 2px;
       line-height: 1.38; }
@@ -17084,7 +17084,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
     position: relative;
     font-weight: 500;
     font-size: 12px;
-    text-transform: uppercase;
+     
     color: #031b4e;
     padding: 0 0 5px;
     letter-spacing: 1px;
@@ -17130,7 +17130,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px; }
     .ui-datepicker .ui-datepicker-calendar th {
-      text-transform: uppercase;
+       
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 1px;
@@ -17142,7 +17142,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
   .card--calendar .card-title {
     color: #14112d;
     font-weight: 700;
-    text-transform: uppercase;
+     
     margin-bottom: 15px; }
   .card--calendar .card-body {
     padding: 0; }
@@ -17206,7 +17206,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
 
 .card--events .card-title {
   color: #a5a0b1;
-  text-transform: uppercase;
+   
   margin-bottom: 10px;
   font-size: 10px;
   font-weight: 500;
@@ -17228,7 +17228,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
   .card--events .list-group-item:first-child, .card--events .list-group-item:last-child {
     border-radius: 0; }
   .card--events .list-group-item label {
-    text-transform: uppercase;
+     
     font-weight: 700;
     font-size: 10px;
     color: #37326d;
@@ -17252,7 +17252,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
     font-size: 11px; }
     .card--events .list-group-item small span {
       font-weight: 700;
-      text-transform: uppercase; }
+        }
 
 .card--events .event-indicator {
   width: 10px;
@@ -17968,7 +17968,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
   .main-calendar .fc-head-container .fc-day-header {
     font-size: 11px;
     font-weight: 700;
-    text-transform: uppercase;
+     
     padding: 5px 0;
     color: #1c273c; }
   .main-calendar .fc-view > table {
@@ -18034,7 +18034,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
   .main-calendar .fc-view.fc-listMonth-view .fc-list-heading-main, .main-calendar .fc-view.fc-listWeek-view .fc-list-heading-main {
     display: block;
     font-size: 11px;
-    text-transform: uppercase;
+     
     color: #8587a7;
     font-weight: 600;
     padding: 5px;
@@ -18450,7 +18450,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
     font-size: 13px;
     font-weight: 500;
     color: #3b4863;
-    text-transform: uppercase; }
+      }
     .main-nav-line-chat .nav-link:hover, .main-nav-line-chat .nav-link:focus, .main-nav-line-chat .nav-link:active {
       outline: none; }
     .main-nav-line-chat .nav-link + .nav-link {
@@ -18735,7 +18735,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
   .main-chat-time span {
     font-size: 10px;
     font-weight: 500;
-    text-transform: uppercase;
+     
     letter-spacing: 1px; }
 
 .main-msg-wrapper {
@@ -19240,7 +19240,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
     padding-left: 25px;
     padding-right: 25px;
     font-weight: 700;
-    text-transform: uppercase;
+     
     height: 38px; }
 
 @media (min-width: 576px) {
@@ -19256,7 +19256,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
   padding-left: 25px;
   padding-right: 25px;
   font-weight: 700;
-  text-transform: uppercase;
+   
   height: 38px; }
 
 .main-column-signup {
@@ -19486,7 +19486,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
 
 .invoice-title {
   margin-bottom: 0;
-  text-transform: uppercase;
+   
   color: #e2e8f5;
   font-weight: 700; }
 
@@ -19559,7 +19559,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
 
 .main-content-left-mail .btn-compose {
   margin-bottom: 20px;
-  text-transform: uppercase;
+   
   font-weight: 500;
   font-size: 11px;
   padding: 0 20px;
@@ -20166,7 +20166,7 @@ input.parsley-error:focus, textarea.parsley-error:focus, input.parsley-success:f
   border-bottom: 1px solid #edecf7; }
 
 .main-content-body-profile .main-nav-line .nav-link {
-  text-transform: uppercase;
+   
   font-size: 13px;
   font-weight: 500;
   color: #3b4863; }
@@ -40226,7 +40226,7 @@ button.bg-dark:hover, button.bg-dark:focus {
   letter-spacing: -4px; }
 
 .tx-uppercase {
-  text-transform: uppercase; }
+    }
 
 .tx-lowercase {
   text-transform: lowercase; }
@@ -47484,7 +47484,7 @@ mark, .mark {
 
 .initialism {
   font-size: 90%;
-  text-transform: uppercase; }
+    }
 
 .blockquote {
   margin-bottom: 1rem;
@@ -47919,7 +47919,7 @@ pre {
   position: relative; }
   .sales-flot .flot-chart .flot-x-axis > div span:first-child {
     display: block;
-    text-transform: uppercase;
+     
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 500;
     font-size: 10px;
@@ -48728,7 +48728,7 @@ pre {
   right: -5px;
   position: absolute;
   font-size: 10px;
-  text-transform: uppercase;
+   
   letter-spacing: 1px;
   z-index: 10; }
   .card-body-top a {
@@ -48869,7 +48869,7 @@ pre {
     white-space: nowrap !important; } }
 
 .card-dashboard-audience-metrics .flot-chart .flot-x-axis > div {
-  text-transform: uppercase;
+   
   font-size: 10px;
   font-weight: 700;
   color: #8587a7;
@@ -48880,7 +48880,7 @@ pre {
   margin-bottom: 15px;
   padding: 10px; }
   .task-box.primary p, .task-box.pink p {
-    text-transform: uppercase;
+     
     font-weight: 700;
     font-size: 10px;
     margin-bottom: 5px;
@@ -48971,7 +48971,7 @@ table.dataTable tfoot th, table.dataTable tfoot td {
 
 .card-category {
   font-size: 18px;
-  text-transform: uppercase;
+   
   text-align: center;
   font-weight: 500;
   letter-spacing: .05em;
@@ -49250,7 +49250,7 @@ table.dataTable tfoot th, table.dataTable tfoot td {
   flex-grow: 1; }
 
 .product-title, .price, .sizes, .colors {
-  text-transform: UPPERCASE;
+   
   font-weight: bold; }
 
 .checked, .price span {
@@ -49548,7 +49548,7 @@ pre {
 .main-sidebar-body .nav-label {
   color: #7c808a;
   margin-bottom: 0;
-  text-transform: uppercase;
+   
   font-size: 10px;
   font-weight: 500;
   letter-spacing: .5px;
@@ -50627,7 +50627,7 @@ table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before
     font-weight: 600;
     font-size: 16px; }
   .description-block > .description-text {
-    text-transform: uppercase;
+     
     color: #a3b1c9; }
 
 .socailicons {

@@ -22,8 +22,8 @@
                                     <div class="tabs-menu1">
                                     <!-- Tabs -->
                                         <ul class="nav panel-tabs main-nav-line">
-                                            <li><a href="#tab1" class="nav-link active" data-toggle="tab">ADD FUNDS</a></li>
-                                            <li><a href="#tab2" class="nav-link" data-toggle="tab">INVOICES</a></li>
+                                            <li><a href="#tab1" class="nav-link active" data-toggle="tab">Añadir saldo</a></li>
+                                            <li><a href="#tab2" class="nav-link" data-toggle="tab">Facturas</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -46,10 +46,10 @@
                                 <button class="btn btn-default" style="background: white;border: 2px solid #ff1c05; margin-bottom: 10px"
                                 data-effect="effect-rotate-bottom" data-toggle="modal" href="#modaldemo8"
                                 >
-                                    Anadir tarjta
+                                    Añadir tarjeta
                                 </button>
                             </div>
-                            <h4>YOUR CREDIT CARDS</h4>
+                            <h4>Tus tarjetas</h4>
                             <div class="row">
                             <div class="col-md-4 col-sm-6">
                                 @foreach ($cards as $card)  
@@ -75,7 +75,7 @@
                                         <i class="fab fa-cc-mastercard"></i></button>
                                     </span>
                                     <span>
-                                        <a class="btn btn-danger btn-block" style="margin-left: 25px" href="{{route('delete-card', $card->id)}}">Delete</a>
+                                        <a class="btn btn-danger btn-block" style="margin-left: 25px" href="{{route('delete-card', $card->id)}}">Eliminar</a>
                                     </span>
                                 </div>    
                                 @endforeach
@@ -101,14 +101,14 @@
                                         @csrf
 
                                         <div class='col-xs-12 form-group required'>
-                                            <label class='control-label'>Name on Card</label> 
+                                            <label class='control-label'>Nombre en la tarjeta</label> 
                                             <input class='form-control'
                                                 size='4' type='text'>
                                         </div>
                                         
                                       
                                         <div class='col-xs-12 form-group required'>
-                                            <label class='control-label'>Card Number</label> <input autocomplete='off'
+                                            <label class='control-label'>Número de tarjeta</label> <input autocomplete='off'
                                                 class='form-control card-num' size='20' type='text'>
                                         </div>
 
@@ -119,18 +119,18 @@
                                                     size='4' type='text'>
                                             </div>
                                             <div class='col-xs-12 col-md-4 form-group expiration required'>
-                                                <label class='control-label'>Expiration Month</label> <input
+                                                <label class='control-label'>Mes de expiración</label> <input
                                                     class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
                                             </div>
                                             <div class='col-xs-12 col-md-4 form-group expiration required'>
-                                                <label class='control-label'>Expiration Year</label> <input
+                                                <label class='control-label'>Año de expiración</label> <input
                                                     class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
                                             </div>
                                         </div>
 
                                         <div class='form-row row'>
                                             <div class='col-md-12 hide error form-group'>
-                                                <div class='alert-danger alert'>Fix the errors before you begin.</div>
+                                                <div class='alert-danger alert'>Rellena todos los campos correctamente antes de continuar</div>
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
@@ -158,12 +158,12 @@
                                 <table class="table text-md-nowrap" id="transactions">
                                     <thead>
                                         <tr>
-                                            <th class="wd-15p border-bottom-0">INVOICE NUMBER</th>
-                                            <th class="wd-15p border-bottom-0">DATE</th>
-                                            <th class="wd-20p border-bottom-0">INVOICE DESCRIPTION</th>
-                                            <th class="wd-15p border-bottom-0">INVOICE TOTAL</th>
-                                            <th class="wd-10p border-bottom-0">INVOICE RELATED TRANSACTION</th>
-                                            <th class="wd-25p border-bottom-0">INVOICE DOWNLOAD</th>
+                                            <th class="wd-15p border-bottom-0">Número de factura</th>
+                                            <th class="wd-15p border-bottom-0">Fecha</th>
+                                            <th class="wd-20p border-bottom-0">Descripción de la factura</th>
+                                            <th class="wd-15p border-bottom-0">Total de la factura</th>
+                                            <th class="wd-10p border-bottom-0">Transacción relacionada</th>
+                                            <th class="wd-25p border-bottom-0">Descargar factura</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -189,7 +189,7 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content modal-content-demo">
 					<div class="modal-header">
-						<h6 class="modal-title">ADD CARD</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+						<h6 class="modal-title">Añadir tarjeta</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
 					</div>
 					<div class="modal-body">
 						<form method="post" action="{{route('add-card')}}" id="add-form">
@@ -217,8 +217,8 @@
                                     background-image: linear-gradient(
                                 0deg
                                 , red, #fea31f);
-                        ">ADD</button>
-						<button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                        ">Añadir</button>
+						<button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Cerrar</button>
 					</div>
 				</div>
 			</div>

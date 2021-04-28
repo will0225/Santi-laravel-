@@ -425,7 +425,7 @@
   
   .initialism {
 	font-size: 90%;
-	text-transform: uppercase;
+	 
   }
   
   .blockquote {
@@ -987,7 +987,7 @@
 	.flot-chart .flot-x-axis > div span {
 	  &:first-child {
 		display: block;
-		text-transform: uppercase;
+		 
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		font-weight: 500;
 		font-size: 10px;
@@ -2136,7 +2136,7 @@
 	left: -5px;
 	position: absolute;
 	font-size: 10px;
-	text-transform: uppercase;
+	 
 	letter-spacing: 1px;
 	z-index: 10;
   }
@@ -2316,7 +2316,7 @@
   }
   
   .card-dashboard-audience-metrics .flot-chart .flot-x-axis > div {
-	text-transform: uppercase;
+	 
 	font-size: 10px;
 	font-weight: 700;
 	color: #8587a7;
@@ -2329,7 +2329,7 @@
 	padding: 10px;
   
 	&.primary p, &.pink p {
-	  text-transform: uppercase;
+	   
 	  font-weight: 700;
 	  font-size: 10px;
 	  margin-bottom: 5px;
@@ -2453,7 +2453,7 @@
   
   .card-category {
 	font-size: 18px;
-	text-transform: uppercase;
+	 
 	text-align: center;
 	font-weight: 500;
 	letter-spacing: .05em;
@@ -2832,7 +2832,7 @@
   }
   
   .product-title, .price, .sizes, .colors {
-	text-transform: UPPERCASE;
+	 
 	font-weight: bold;
   }
   
@@ -3216,7 +3216,7 @@
 	.nav-label {
 	  color: #7c808a;
 	  margin-bottom: 0;
-	  text-transform: uppercase;
+	   
 	  font-size: 10px;
 	  font-weight: 500;
 	  letter-spacing: .5px;
@@ -4709,7 +4709,7 @@
     }
 
     .description-text {
-      text-transform: uppercase;
+       
       color: #a3b1c9;
     }
   }

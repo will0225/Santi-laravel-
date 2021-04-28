@@ -28121,7 +28121,7 @@ select {
 }
 
 .uppercase {
-  text-transform: uppercase;
+   
 }
 
 .lowercase {
@@ -60078,7 +60078,7 @@ select {
   }
 
   .sm\:uppercase {
-    text-transform: uppercase;
+     
   }
 
   .sm\:lowercase {
@@ -91970,7 +91970,7 @@ select {
   }
 
   .md\:uppercase {
-    text-transform: uppercase;
+     
   }
 
   .md\:lowercase {
@@ -123862,7 +123862,7 @@ select {
   }
 
   .lg\:uppercase {
-    text-transform: uppercase;
+     
   }
 
   .lg\:lowercase {
@@ -155754,7 +155754,7 @@ select {
   }
 
   .xl\:uppercase {
-    text-transform: uppercase;
+     
   }
 
   .xl\:lowercase {
@@ -187646,7 +187646,7 @@ select {
   }
 
   .\32xl\:uppercase {
-    text-transform: uppercase;
+     
   }
 
   .\32xl\:lowercase {
