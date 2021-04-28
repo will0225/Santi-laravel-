@@ -50247,7 +50247,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     position: absolute;
     top: -8.5px;
     right: 24px;
-    border-bottom: 9px solid #763fcd;
+    border-bottom: 9px solid # f70c41;
     border-left: 9px solid transparent;
     border-right: 9px solid transparent; }
   .responsive.main-header {
@@ -50739,11 +50739,16 @@ table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before
 
 
 /* extra css */
+h1,h2,h3,h4,h5,h6,p,span,div,body,ul,li,table,td,tr {
+  color:#484848 !important;
+  font-family:"Poppins", "Segoe UI", sans-serif !important;
+}
+
 #basic-alert.card {
   margin-top:0 !important;
   box-shadow:none !important;
   -webkit-box-shadow:none !important;
-  border:1px solid #484848;
+  border-bottom:1px solid #484848;
   border-radius:0px;
 }
 .main-content .container, .main-content .container-fluid {
@@ -50755,7 +50760,7 @@ table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before
 }
 .main-nav-line .nav-link.active {
   background:none;
-  border-bottom:2px solid
+  border-bottom:2px solid #FEA31F;
 }
 ul.nav.panel-tabs.main-nav-line > li.active::after {
   content: "";
@@ -50765,4 +50770,23 @@ ul.nav.panel-tabs.main-nav-line > li.active::after {
   display: block;
   position: relative;
   top: 11px;
+}
+.row-sm {
+  margin-left:0px !important;
+  margin-right:0px !important;
+}
+.row-sm > div {
+  padding-left:0px !important;
+  padding-right:0px !important;
+}
+.app-sidebar .slide.active .side-menu__item {
+  background:rgba(255, 255, 255, 0.12);
+  border-radius:4px;
+  font-weight:bold;
+}
+.side-menu__label, .side-menu .side-menu__icon {
+  color:#FFFFFF !important;
+}
+.tabs-style-1 .main-nav-line .nav-link {
+  background:none;
 }

@@ -9,10 +9,10 @@
 						<div style="padding-left: 10%; padding-right: 10%;margin-top: 60px; margin-bottom: 30px;">
                             <div class="row">
                                 <div class="col-md-6 col-lg-6" style="text-align: left">
-                                    <h6 class="card-title mb-1" style="font-family: cursive;">Escritorio</h6>
+                                    <h6 class="card-title mb-1" >Escritorio</h6>
                                 </div>
                                 <div class="col-md-6 col-lg-6" style="text-align: right">
-                                    <h6 class="card-title mb-1" style="font-family: cursive;">{{ $balance }}EUR</h6>
+                                    <h6 class="card-title mb-1" >{{ $balance }}EUR</h6>
                                 </div>
                             </div>
 						</div>

@@ -71967,7 +71967,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     position: absolute;
     top: -8.5px;
     right: 24px;
-    border-bottom: 9px solid #763fcd;
+    border-bottom: 9px solid # f70c41;
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
   }
