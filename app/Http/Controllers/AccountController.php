@@ -16,24 +16,23 @@ class AccountController extends Controller
     function profileUpdate(Request $request) {
         $user_id = auth()->user()->id;
         $validated = $request->validate([
-            'name' => 'required|max:255',
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'nick_name' => 'required|max:255',
             'phone' => 'required|max:255',
-            'address' => 'required',
             'bio' => 'required',
             'email' => 'required|email'
         ]);
         User::where('id', $user_id)->update([
-            'name'=> $request->name,
             'first_name'=> $request->first_name,
             'last_name'=> $request->last_name,
-            'nick_name'=> $request->nick_name,
             'phone'=> $request->phone,
-            'address'=> $request->address,
             'bio' => $request->bio,
-            'email'=> $request->email
+            'email'=> $request->email,
+            'country'=> $request->country,
+            'state'=> $request->state,
+            'zip'=> $request->zip,
+            'city'=> $request->city,
+            'vat_number' => $request->vat_number
         ]);
         return redirect()->back()->with('message', 'Profile updated successfully!');;
     }

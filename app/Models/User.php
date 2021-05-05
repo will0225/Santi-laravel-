@@ -15,7 +15,7 @@ use App\Models\Balance;
 use App\Models\Transaction;
 use App\Models\Invoice;
 use App\Models\Card;
-
+use App\Models\Logs;
 
 class User extends Authenticatable
 {
@@ -33,7 +33,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'is_admin', 'first_name', 'last_name', 'nick_name', 'phone', 'address', 'bio', 'active', 'company', 'balance'
+        'name', 'email', 'password', 'is_admin', 'first_name', 'last_name', 'nick_name', 'phone', 'address', 'bio', 'active', 'company', 'balance', 'city', 'country', 'zip', 'state', 'vat_number'
     ];
 
     /**
@@ -80,5 +80,9 @@ class User extends Authenticatable
 
     public function cards() {
         return $this->hasMany(Card::class);
+    }
+
+    public function logs() {
+        return $this->hasMany(Logs::class);
     }
 }

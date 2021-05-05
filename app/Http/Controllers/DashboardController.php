@@ -21,8 +21,10 @@ class DashboardController extends Controller
         } else {
             $data['balance'] = 0;
         }
-        $transactions = Transaction::where('receiver_id', $user->id)->get();
+        $transactions = Transaction::where(['receiver_id'=>$user->id,'cash_on_delivery' => 0 ])->get();
+        $cash_on_delivery = Transaction::where(['receiver_id'=>$user->id, 'cash_on_delivery' => 1 ])->get();
         $data['transactions'] = $transactions;
+        $data['cash_on_delivery'] = $cash_on_delivery;
         return view('dashboard', $data);
     }
 }

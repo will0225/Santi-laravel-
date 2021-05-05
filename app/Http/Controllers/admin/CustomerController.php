@@ -69,15 +69,16 @@ class CustomerController extends Controller
                 'type' => 'payment',
                 'balance' => $customer[0]->balances[0]->amount,
                 'amount' => $amount,
-                'description' => $description
+                'description' => $description,
+                'cash_on_delivery' => $request->cash
             ]);
 
-            Invoice::create([
-                'user_id'=>$customer_id,
-                'transaction' => true,
-                'amount' => $amount,
-                'description' => $description
-            ]);
+            // Invoice::create([
+            //     'user_id'=>$customer_id,
+            //     'transaction' => true,
+            //     'amount' => $amount,
+            //     'description' => $description
+            // ]);
 
             session(['success' => 'Successfully!']);
             return ['status' => $result, 'message' => 'Success!']; 
@@ -93,12 +94,21 @@ class CustomerController extends Controller
       
         $user  = User::where('id', $customer_id)->get();
         $invoice = Invoice::where('id',  $id)->get();
+        return view('billing.invoice', 
+                  ['amount' => $invoice[0]->amount, 
+                   'type'=> $invoice[0]->transaction, 
+                   "card_id" => $invoice[0]->card_id,
+                   "customer" =>  $user[0],
+                   "create_at" => $invoice[0]->created_at       
+                  ]);
+                  exit;
         $pdf = PDF::loadView('billing.invoice', 
                   ['amount' => $invoice[0]->amount, 
                    'type'=> $invoice[0]->transaction, 
                    "card_id" => $invoice[0]->card_id,
                    "customer" =>  $user[0],
-                   "create_at" => $invoice[0]->created_at,            
+                   "create_at" => $invoice[0]->created_at,  
+                   "user" => $user          
                   ]);
   
         // download PDF file with download method

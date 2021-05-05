@@ -77,7 +77,16 @@
 											</tr>
 										</thead>
 										<tbody>
-										
+											@foreach ($cash_on_delivery as $data)
+											<tr>
+												<td>{{ $data->id }}</td>
+												<td>{{ $data->created_at }}</td>
+												<td><button class="btn btn-outline-{{ $data->type == 'add_fund'?'success':'danger' }}">{{ $data->type == 'add_fund'?'SALDO':'PAGO' }}</button></td>
+												<td>{{ $data->description }}</td>
+												<td>{{ $data->type == 'add_fund'?'+':'-' }}{{ $data->amount }}EUR</td>
+												<td>{{ $data->balance }}EUR</td>
+											</tr>
+											@endforeach
 										</tbody>
 									</table>
 								</div>

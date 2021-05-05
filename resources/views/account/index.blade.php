@@ -58,16 +58,7 @@
                                         <form class="form-horizontal" method="post" action={{route('profileUpdate')}}>
                                             @csrf
                                             <div class="mb-4 main-content-label">Name</div>
-                                            <div class="form-group ">
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <label class="form-label">User Name</label>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <input type="text" class="form-control" name="name" placeholder="User Name" value="{{old('name',$profile->name)}}">
-                                                    </div>
-                                                </div>
-                                            </div>
+                                          
                                             <div class="form-group ">
                                                 <div class="row">
                                                     <div class="col-md-3">
@@ -85,16 +76,6 @@
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="text" class="form-control"  placeholder="Last Name" name="last_name" value="{{ old('last_name', $profile->last_name) }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group ">
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <label class="form-label">Nick Name</label>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <input type="text" class="form-control"  placeholder="Nick Name" name="nick_name" value="{{ old('nick_name', $profile->nick_name) }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,10 +105,54 @@
                                             <div class="form-group ">
                                                 <div class="row">
                                                     <div class="col-md-3">
-                                                        <label class="form-label">Address</label>
+                                                        <label class="form-label">country</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input class="form-control"  rows="2"  placeholder="Address" name="address" value="{{ old('address', $profile->address) }}"></input>
+                                                        <input class="form-control"  rows="2"  placeholder="country" name="country" value="{{ old('country', $profile->country) }}"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">state</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input class="form-control"  rows="2"  placeholder="state" name="state" value="{{ old('state', $profile->state) }}"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">city</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input class="form-control"  rows="2"  placeholder="city" name="city" value="{{ old('city', $profile->city) }}"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">zip</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input class="form-control"  rows="2"  placeholder="zip" name="zip" value="{{ old('zip', $profile->zip) }}"></input>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label class="form-label">VAT NUMBER</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <input class="form-control"  rows="2"  placeholder="vat" name="vat_number" value="{{ old('vat_number', $profile->vat_number) }}"></input>
                                                     </div>
                                                 </div>
                                             </div>
