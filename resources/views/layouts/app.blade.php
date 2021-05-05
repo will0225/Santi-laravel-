@@ -77,9 +77,7 @@
 
 		<!-- main-sidebar opened -->
 		<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-		<aside class="app-sidebar sidebar-scroll " 
-		style="background-color: red;
-    			background-image: linear-gradient(0deg, red, #fea31f);">
+		<aside class="app-sidebar sidebar-scroll">
 			<div class="main-sidebar-header" style="background: transparent; margin-top: 68px;">
 				<a class=" desktop-logo logo-light" href="/"><img src="../assets/img/brand/logo.png" class="main-logo" alt="logo"></a>
 				<a class=" desktop-logo logo-dark" href="/"><img src="../assets/img/brand/logo-white.png" class="main-logo dark-theme" alt="logo"></a>
@@ -138,7 +136,7 @@
 					</div>
 					<div class="main-header-right">
 						<div class="nav nav-item  navbar-nav-right ml-auto">
-							<span style="color: white;
+							<span style="color: white !important;
     							margin-top: 16px;">{{Auth::user()->name}}</span>
 							<form class="navbar-form nav-item my-auto d-lg-none" role="search">
 								<div class="input-group nav-item my-auto">
@@ -161,10 +159,10 @@
 								<a class="profile-user" href=""><img alt="" src="../assets/img/faces/5.jpg"></a>
 								<div class="dropdown-menu dropdown-menu-arrow animated fadeInUp">
 									<div class="main-header-profile header-img" style="
-										    background-color: red;
+										    background-color: #f70c41;
 												background-image: linear-gradient(
 											0deg
-											, red, #fea31f);
+											, #f70c41, #fea31f);
 									">
 										<div class="main-img-user"><img alt="" src="../assets/img/faces/5.jpg"></div>
 										<h6>{{Auth::user()->name}}</h6><span></span>

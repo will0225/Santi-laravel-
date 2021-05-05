@@ -940,7 +940,7 @@ License        :   Licensed under ThemeForest License
 .side-menu h3 {
   color: $white-3;
   margin-bottom: 0;
-  text-transform: uppercase;
+   
   font-size: 10px;
   font-weight: 500;
   letter-spacing: .5px;
@@ -1067,21 +1067,21 @@ License        :   Licensed under ThemeForest License
 
 .app-sidebar {
   .side-menu__item.active:hover {
-    color: #474579 !important;
+    color: #f70c41 !important;
   }
 
   .slide {
     &.active .side-menu__icon, &.is-expanded .side-menu__icon {
-      fill: #474579  !important;
+      fill: #f70c41  !important;
     }
 
     &.active {
       .side-menu__icon {
-        fill: #474579  !important;
+        fill: #f70c41  !important;
       }
 
       .side-menu__item {
-        color: #474579 !important;
+        color: #f70c41 !important;
       }
     }
   }
