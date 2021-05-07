@@ -16,7 +16,7 @@ use App\Models\Transaction;
 use App\Models\Invoice;
 use App\Models\Card;
 use App\Models\Logs;
-
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -26,6 +26,7 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use Billable;
+    use Loggable;
 
     /**
      * The attributes that are mass assignable.

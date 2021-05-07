@@ -11,6 +11,7 @@ use App\Models\Transaction;
 use Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Invoice;
+use App\Models\Logs;
 use PDF;
 
 class CustomerController extends Controller
@@ -28,12 +29,15 @@ class CustomerController extends Controller
         } else {
             $balance = 0;
         }
+        $logs = $customer[0]->logs;
+     
         return view('admin.customer.profile', 
             [ 
               'customer'=>$customer[0], 
               'transactions' => $transactions,
               'balance' => $balance,
-              'invoices' => $customer[0]->invoices
+              'invoices' => $customer[0]->invoices,
+              'logs' => $logs
             ]
         );
     }
@@ -41,10 +45,23 @@ class CustomerController extends Controller
     function isActive(Request $request) {
         $user = User::where('id', $request->user_id)->get();
         $newUser = User::where('id', $request->user_id)->update(['is_active' => !$user[0]->is_active]);
+        Logs::create([
+            "user_id" => $user_id,
+            "log_type" => "User Active",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
+        ]);
         return $newUser;
     }
 
     function delete(Request $request) {
+        $user = Auth::user();
+        Logs::create([
+            "user_id" => $user->id,
+            "log_type" => "Usre Delete",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
+        ]);
         User::where('id', $request->user_id)->delete();
         session(['success' => 'Successfully deleted!']);
         return true;
@@ -80,6 +97,13 @@ class CustomerController extends Controller
             //     'description' => $description
             // ]);
 
+            Logs::create([
+                "user_id" => $user->id,
+                "log_type" => "Transaction",
+                "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+                "log_date" => date('Y-m-d H:i:s')
+            ]);
+
             session(['success' => 'Successfully!']);
             return ['status' => $result, 'message' => 'Success!']; 
         }
@@ -110,7 +134,12 @@ class CustomerController extends Controller
                    "create_at" => $invoice[0]->created_at,  
                    "user" => $user          
                   ]);
-  
+        Logs::create([
+            "user_id" => $user->id,
+            "log_type" => "Admin Create Invoice",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
+        ]);
         // download PDF file with download method
         return $pdf->download('pdf_file.pdf');
   

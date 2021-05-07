@@ -40,10 +40,20 @@
                     <strong>Well done!</strong>    {{ Session::get('success') }}
                 </div>
                 @endif
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger mg-b-0" role="alert">
+                        <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Error!</strong> {{ $error }}
+                    </div>
+                    @endforeach
+			    @endif
                 <div class="tab-content">
                         <div class="tab-pane active" id="tab1">
                             <div class="input-group">
-                                <button class="btn btn-default" style="background: white;border: 2px solid #ff1c05; margin-bottom: 10px"
+                                <button class="btn btn-default" style="background: white;border: 2px solid #ff1c05; margin-bottom: 10px; margin-top: 25px"
                                 data-effect="effect-rotate-bottom" data-toggle="modal" href="#modaldemo8"
                                 >
                                     Añadir tarjeta
@@ -58,18 +68,15 @@
                                         <div class="input-group-text">
                                             <label class="rdiobox wd-16 mg-b-0">
                                                 <input type="radio"  name="card-check" 
-                                                    data-name="{{$card->name}}"
-                                                    data-card_number="{{$card->card_number}}"
-                                                    data-cvc="{{$card->cvc}}"
-                                                    data-exp_month="{{$card->exp_month}}"
-                                                    data-exp_year="{{$card->exp_year}}"
+                                                    data-paymentid="{{$card->id}}"
                                                     onchange="cardChange(event)"
                                                 >
+                                                
                                                 <span></span>
                                             </label>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="{{$card->card_number}}" disabled>
+                                    <input type="text" class="form-control" placeholder="...{{$card->card->last4}}" disabled>
                                     <span class="input-group-append">
                                         <button class="btn btn-info" type="button"><i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i> &nbsp;
                                         <i class="fab fa-cc-mastercard"></i></button>
@@ -80,10 +87,29 @@
                                 </div>    
                                 @endforeach
                                 </div>
+                                
                             </div>
-                            
-
-                            <div class="row">
+                            <form role="form" action="{{ route('make-payment') }}" method="post">
+                                @csrf
+                                <input type="hidden" id="payment_id" name="payment_id" />
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <input class="form-control" name="description" placeholder="description" type="text">
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <input class="form-control" name="amount" placeholder="amount" type="text">
+                                    </div>
+                                </div>
+                                <button class="btn ripple btn-primary" type="submit" 
+                                    style="
+                                margin-top: 15px;
+                                background-color: red;
+                                    background-image: linear-gradient(
+                                0deg
+                                , red, #fea31f);
+                                ">Pay with saved card</button>
+                            </form>
+                            <div class="row" style="margin-top: 20px">
                                 <!-- <div class="col-md-4 col-sm-12">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -197,18 +223,8 @@
                             <div class="input-group" style="margin-bottom: 15px">
                               <input type="text" class="form-control" placeholder="card name" name="name" id="name">
                             </div>
-                            <div class="input-group" style="margin-bottom: 15px">
-                                <input type="text" class="form-control" placeholder="card number" name="card_number" id="card_number">
-                            </div>
-                            <div class="input-group" style="margin-bottom: 15px">
-                                <input type="text" class="form-control" placeholder="expire month" name="exp_month" id="exp_month">
-                            </div>
-                            <div class="input-group" style="margin-bottom: 15px">
-                                <input type="text" class="form-control" placeholder="expire year" name="exp_year" id="card_year">
-                            </div>
-                            <div class="input-group" style="margin-bottom: 15px">
-                                <input type="text" class="form-control" placeholder="CVC" name="cvc" id="cvc">
-                            </div>
+                            <input name="payment_method" value="" id="payment_method" type="hidden"> 
+                            <div id="card-element"></div>
                         </form>
 					</div>
 					<div class="modal-footer">
@@ -224,10 +240,14 @@
 			</div>
 		</div>
     </div>
+    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-
     <script type="text/javascript">
         $(function () {
+            var stripe = Stripe( '{{ env('STRIPE_KEY') }}' );
+            var elements = stripe.elements();
+            card = elements.create('card');
+            card.mount('#card-element');
             var $form = $(".stripe-payment");
             $('form.stripe-payment').bind('submit', function (e) {
                 var $form = $(".stripe-payment"),
@@ -277,51 +297,43 @@
                 }
             }
 
-            $('#add-button').click(() => {
+            $('#add-button').click(() => { 
+                submitPaymentMethod();
                 if($('#name').val() == '') {
                     alert('Input name input');
                     return;
                 }
-
-                if($('#exp_month').val() == '') {
-                    alert('Input exp month input');
-                    return;
-                }
-
-                if($('#exp_year').val() == '') {
-                    alert('Input exp year input');
-                    return;
-                }
-
-                if($('#cvc').val() == '') {
-                    alert('Input cvc input');
-                    return;
-                }
-
-                if($('#card_number').val() == '') {
-                    alert('Input card number input');
-                    return;
-                }
-
-                $('#add-form').submit();
+               
             })
+
+            function submitPaymentMethod(){
+                stripe.confirmCardSetup(
+                    '{{ $intent->client_secret }}', {
+                        payment_method: {
+                            card:  card,
+                            billing_details: {
+                                name: $('#name').val()
+                            }
+                        }
+                    }
+                ).then(function(result) {console.log(result);
+                    if (result.error) {
+                        alert(result.error.message);
+                    } else {
+                        card.clear();
+                        $('#payment_method').val(result.setupIntent.payment_method);
+                        $('#add-form').submit();
+                    }
+                });
+            }
 
         });
         
         function cardChange(e) {
-            var name = $(e.target).data('name');
-            var card_number = $(e.target).data('card_number');
-            var exp_month = $(e.target).data('exp_month');
-            var exp_year = $(e.target).data('exp_year');
-            var cvc = $(e.target).data('cvc');
-            console.log(name, card_number, exp_month, exp_year, cvc);
-            var inputs = $('#stripe-payment').find('input');
-            $(inputs[1]).val(name);
-            $(inputs[2]).val(card_number);
-            $(inputs[3]).val(cvc);
-            $(inputs[4]).val(exp_month);
-            $(inputs[5]).val(exp_year);
+            var paymentid = $(e.target).data('paymentid');
+            $('#payment_id').val(paymentid);
         }
+        
 
 </script>
 

@@ -277,9 +277,35 @@
                     </div>    
                 </div>
                 <div class="tab-pane" id="tab5">  
-                    5
-                </div>
-            </div>              
+                    <div class="table-responsive">
+                            <table class="table text-md-nowrap" id="logs">
+                                <thead>
+                                    <tr>
+                                        <th class="wd-15p border-bottom-0"> NUMBER</th>
+                                        <th class="wd-15p border-bottom-0">DATE</th>
+                                        <th class="wd-20p border-bottom-0">TYPE</th>
+                                        <th class="wd-15p border-bottom-0">IP ADDRESS</th>
+                                        <th class="wd-10p border-bottom-0">DEVICE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($logs as $invoice) 
+                                    <?php $data = json_decode($invoice->data);
+                                
+                                    ?>
+                                    <tr>
+                                        <td>{{ $invoice->id }}</td>
+                                        <td>{{ $invoice->created_at->format('d/m/Y') }}</td>
+                                        <td>{{ $invoice->log_type == 'edit'?"logout":$invoice->log_type }}</td>
+                                        <td>{{ $invoice->log_type == 'edit'? "":$data->ip }}</td>
+                                        <td>{{ $invoice->log_type == 'edit'? "": $data->user_agent }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>    
+                    </div>
+                </div>              
         </div>
         
     </div>

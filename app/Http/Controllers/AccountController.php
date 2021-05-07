@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\User;
 use \App\Actions\Fortify\UpdateUserPassword;
+use \App\Models\Logs;
 
 class AccountController extends Controller
 {
@@ -34,6 +35,12 @@ class AccountController extends Controller
             'city'=> $request->city,
             'vat_number' => $request->vat_number
         ]);
+        Logs::create([
+            "user_id" => $user_id,
+            "log_type" => "Profile Update",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
+        ]);
         return redirect()->back()->with('message', 'Profile updated successfully!');;
     }
 
@@ -44,6 +51,12 @@ class AccountController extends Controller
             'confirmation_password' => $request->confirmation_password
         );
         $user = auth()->user();
+        Logs::create([
+            "user_id" => $user->id,
+            "log_type" => "Password Update",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
+        ]);
         $passwordUpdate->update($user, $input);
     }
 }

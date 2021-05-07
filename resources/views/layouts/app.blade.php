@@ -172,6 +172,10 @@
 									<a class="dropdown-item"  
 									onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
 									><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST"
+										style="display: none;">
+										@csrf
+									</form>
 								</div>
 							</div>
 							<!-- <div class="dropdown main-header-message right-toggle">

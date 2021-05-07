@@ -46,5 +46,6 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/invoices', [InvoicesController::class, 'index']);
     Route::get('/invoices/pdf/{customer_id}/{id}', [CustomerController::class, 'createInvoicePdf'])->name('admin.createInvoicePdf');
     Route::get('/management', [ManagementController::class, 'index']);
+    Route::post('/management', [ManagementController::class, 'settingUpdate'])->name('admin.management.setting.update');
 });
 

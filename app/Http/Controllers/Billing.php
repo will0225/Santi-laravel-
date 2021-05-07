@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Invoice;
 use PDF;
 use App\Models\Card;
+use App\Models\Logs;
 
 class Billing extends Controller
 {
@@ -23,12 +24,15 @@ class Billing extends Controller
     function index() {
         $user = Auth::user();
         $invoices = $user->invoices;
-        $cards = $user->cards;
-        return view('billing.index', [ "invoices" => $invoices, "cards" => $cards ]);
+        $cards = $user->paymentMethods();
+        $intent = $user->createSetupIntent();
+        
+        return view('billing.index', [ "invoices" => $invoices, "cards" => $cards, 'intent' => $intent]);
     }
 
     public function makePayment(Request $request)
     {
+      
         $user = Auth::user();
         $currency = DB::table('currencies')->where('name', 'EUR')->get();
         $balances = Balance::where(['user_id' => $user->id, 'currency_id' => $currency[0]->id])->get();
@@ -57,16 +61,24 @@ class Billing extends Controller
             "type"=> "add_fund",
             "balance" => $transactionBalance
         ]);
-        // dd($request->amount);
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-        
-        $result = Stripe\Charge::create ([
-                "amount" => 100 * $request->amount,
-                "currency" => "eur",
-                "source" => $request->stripeToken,
-                "description" => $request->description 
-        ]);
-        
+        if($request->payment_id) {
+            $validated = $request->validate([
+                'payment_id' => 'required|max:255',
+                'description' => 'required|max:255',
+                'amount' => 'required|numeric|min:0.01',
+            ]);
+            $result = $user->charge(100 * $request->amount, $request->payment_id);
+        } else {
+            Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+            
+            $result = Stripe\Charge::create ([
+                    "amount" => 100 * $request->amount,
+                    "currency" => "eur",
+                    "source" => $request->stripeToken,
+                    "description" => $request->description 
+            ]);
+
+        }
         Invoice::create([
             "user_id" => $user->id,
             "card_id" => $result->id,
@@ -75,24 +87,50 @@ class Billing extends Controller
             "transaction" => false
         ]);
 
+         
+        Logs::create([
+            "user_id" => $user->id,
+            "log_type" => "Add Fund",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
+        ]);
+
+
         return back()->with('success', 'Payment successfully made.');
     }
 
     public function addCreditCard(Request $request) {
         $user = Auth::user();
-        Card::create([
-            "user_id"=> $user->id,
-            "name"=> $request->name,
-            "card_number"=> $request->card_number,
-            "exp_month"=> $request->exp_month,
-            "exp_year"=> $request->exp_year,
-            "cvc"=> $request->cvc
+    
+        if(!$user->stripe_id) {
+            $stripeCustomer = $user->createAsStripeCustomer();
+        }
+       
+       $user->addPaymentMethod($request->payment_method);
+        
+        Logs::create([
+            "user_id" => $user->id,
+            "log_type" => "Add CreditCard",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
         ]);
+
         return back()->with('success', 'Added successfully made!');
     }
 
-    public function deleteCard($id) {
+    public function getSetupIntent( Request $request ){
+        return $request->user()->createSetupIntent();
+    }
+
+    public function deleteCard(Request $request, $id) {
+        $user = Auth::user();
         Card::where('id', $id)->delete();
+        Logs::create([
+            "user_id" => $user->id,
+            "log_type" => "Delete Card",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
+        ]);
         return back()->with('success', 'Deleted successfully made!');
     }
 
@@ -107,7 +145,12 @@ class Billing extends Controller
                  "create_at" => $invoice[0]->created_at,
                  "customer" =>  $user             
                 ]);
-
+        Logs::create([
+            "user_id" => $user->id,
+            "log_type" => "Create Invoice",
+            "data" => json_encode(['ip'=>$request->ip(), 'user_agent' => $request->header('User-Agent')]),
+            "log_date" => date('Y-m-d H:i:s')
+        ]);
       // download PDF file with download method
       return $pdf->download('pdf_file.pdf');
 
