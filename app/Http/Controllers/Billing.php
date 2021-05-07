@@ -124,7 +124,8 @@ class Billing extends Controller
 
     public function deleteCard(Request $request, $id) {
         $user = Auth::user();
-        Card::where('id', $id)->delete();
+        $paymentMethod = $user->findPaymentMethod($id);
+        $paymentMethod->delete();
         Logs::create([
             "user_id" => $user->id,
             "log_type" => "Delete Card",
