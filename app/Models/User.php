@@ -17,6 +17,8 @@ use App\Models\Invoice;
 use App\Models\Card;
 use App\Models\Logs;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
+use App\Models\Group;
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -85,5 +87,9 @@ class User extends Authenticatable
 
     public function logs() {
         return $this->hasMany(Logs::class);
+    }
+
+    public function group() {
+        return $this->belongsTo(Group::class);
     }
 }

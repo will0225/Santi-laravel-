@@ -53,26 +53,17 @@
                 <div class="tab-pane" id="tab2">  
                     <div class="card" style="box-shadow: none">
                         <div class="card-body">
-                            <div class="mb-4 main-content-label">Personal Information</div>
-                            <form class="form-horizontal">
-                                <div class="mb-4 main-content-label">Name</div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label class="form-label">User Name</label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control"  placeholder="User Name" value="{{$customer->name}}">
-                                        </div>
-                                    </div>
-                                </div>
+                          
+                            <form class="form-horizontal" action="{{route('admin.customer.update', $customer->id)}}" method="post">
+                                @csrf
+                                @method('put')
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <label class="form-label">First Name</label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control"  placeholder="First Name" value="{{$customer->first_name}}">
+                                            <input type="text" class="form-control"  placeholder="First Name" name="first_name" value="{{$customer->first_name}}">
                                         </div>
                                     </div>
                                 </div>
@@ -82,29 +73,32 @@
                                             <label class="form-label">last Name</label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control"  placeholder="Last Name" value="{{$customer->last_name}}">
+                                            <input type="text" class="form-control"  placeholder="Last Name" name="last_name" value="{{$customer->last_name}}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <label class="form-label">Nick Name</label>
+                                            <label class="form-label">Group</label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control"  placeholder="Nick Name" value="{{$customer->nick_name}}">
+                                            <select class="form-control" name="group" >
+                                                @foreach ($groups as $group)
+                                                <option value="{{$group->id}}" selected="{{$customer->group->id == $group->id?'true':'false'}}">{{$group->name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="mb-4 main-content-label">Contact Info</div>
+                        
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <label class="form-label">Email<i>(required)</i></label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control"  placeholder="Email" value="{{$customer->email}}">
+                                            <input type="text" class="form-control" name="email"  placeholder="Email" value="{{$customer->email}}">
                                         </div>
                                     </div>
                                 </div>
@@ -115,20 +109,11 @@
                                             <label class="form-label">Phone</label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control"  placeholder="phone number" value="{{$customer->phone}}">
+                                            <input type="text" class="form-control" name="phone"  placeholder="phone number" value="{{$customer->phone}}">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label class="form-label">Address</label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <textarea class="form-control" name="example-textarea-input" rows="2"  placeholder="Address">{{$customer->address}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button type="submit" class="btn btn-success">Save</button>
                             </form>
                         </div>
                     </div>
@@ -311,6 +296,7 @@
     </div>
         <script>
             $(document).ready(function(){
+              
                 $('#transactionButton').click(() => {
                     var description = $('#description').val();
                     var date = $('#date').val();
@@ -392,20 +378,27 @@
                 }
                 switch (zone) {
                     case "1":
-                        totalValue = caculate(weight, 3, 5, 10 , 1);
+                        totalValue = caculate(weight, '{{$price->first_price[0]}}', '{{$price->second_price[0]}}', '{{$price->third_price[0]}}' , '{{$price->extra_price[0]}}');
                         break;
                     case "2":
-                        totalValue = caculate(weight, 2, 4, 8 , 2);
+                        totalValue = caculate(weight, '{{$price->first_price[1]}}', '{{$price->second_price[1]}}', '{{$price->third_price[1]}}' , '{{$price->extra_price[1]}}');
                         break;
                     case "3":
-                        totalValue = caculate(weight, 4, 8, 12 , 2);
+                        totalValue = caculate(weight, '{{$price->first_price[2]}}', '{{$price->second_price[1]}}', '{{$price->third_price[2]}}' , '{{$price->extra_price[2]}}');
                         break;
                     default:
                         console.log(1)
                 }
 
                 if(productPrice !== '') {
-                    totalValue = totalValue + productPrice*0.05;
+                    if(zone == "1") {
+                        totalValue = totalValue + productPrice*('{{$price->cash_on_delivery_percent[0]}}'/100);
+                    } else if(zone == "2") {
+                        totalValue = totalValue + productPrice*('{{$price->cash_on_delivery_percent[1]}}'/100);
+                    } else {
+                        totalValue = totalValue + productPrice*('{{$price->cash_on_delivery_percent[2]}}'/100);
+                    }
+                    
                 }
                 $('#totalValue').val(totalValue);
 
@@ -424,6 +417,8 @@
             })
 
             function caculate(value, firstValue, secondValue, fifthValue, extraValue) {
+                console.log(firstValue, secondValue, fifthValue, extraValue)
+             
                 var totalValue = 0;
                 if(value % 1) {
                     totalValue += extraValue;

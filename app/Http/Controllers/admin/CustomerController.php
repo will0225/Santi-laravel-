@@ -12,6 +12,7 @@ use Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Invoice;
 use App\Models\Logs;
+use App\Models\Group;
 use PDF;
 
 class CustomerController extends Controller
@@ -23,6 +24,8 @@ class CustomerController extends Controller
 
     function show($id) {
         $customer = User::where('id', $id)->get();
+        $price = $customer[0]->group->price;
+        $groups = Group::get();
         $transactions = Transaction::where('receiver_id', $customer[0]->id)->get();
         if(count($customer[0]->balances)) {
             $balance = $customer[0]->balances[0]->amount;
@@ -37,9 +40,24 @@ class CustomerController extends Controller
               'transactions' => $transactions,
               'balance' => $balance,
               'invoices' => $customer[0]->invoices,
-              'logs' => $logs
+              'logs' => $logs,
+              'price' => json_decode($price),
+              'groups' => $groups
             ]
         );
+    }
+
+    function update(Request $request, $id) {
+        
+        User::where('id', $id)->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'group_id' => $request->group,
+        ]);
+
+        return redirect()->back()->with('message', 'Customer updated successfully!');
     }
 
     function isActive(Request $request) {

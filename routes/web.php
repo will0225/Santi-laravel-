@@ -41,11 +41,15 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/customers', [CustomerController::class, 'index']);
     Route::get('/customers/{id}', [CustomerController::class, 'show'])->name('admin.customer.profile');
     Route::post('/customers/active', [CustomerController::class, 'isActive'])->name('admin.customer.active');
+    Route::put('/customers/{id}', [CustomerController::class, 'update'])->name('admin.customer.update');
     Route::post('/customers/delete', [CustomerController::class, 'delete'])->name('admin.customer.delete');
     Route::post('/customers/addTransaction', [CustomerController::class, 'addTransaction'])->name('admin.customer.addTransaction');
     Route::get('/invoices', [InvoicesController::class, 'index']);
     Route::get('/invoices/pdf/{customer_id}/{id}', [CustomerController::class, 'createInvoicePdf'])->name('admin.createInvoicePdf');
     Route::get('/management', [ManagementController::class, 'index']);
     Route::post('/management', [ManagementController::class, 'settingUpdate'])->name('admin.management.setting.update');
+    Route::post('/management/groups', [ManagementController::class, 'createGroup'])->name('admin.management.group.create');
+    Route::put('/management/groups', [ManagementController::class, 'updateGroup'])->name('admin.management.group.update');
+    Route::get('/management/groups/{id}', [ManagementController::class, 'deleteGroup'])->name('admin.management.group.delete');
 });
 
