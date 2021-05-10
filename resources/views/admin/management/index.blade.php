@@ -2,7 +2,7 @@
 @section('title', 'ADMIN - MANAGEMENT')
 @section('content')
     <div class="container-fluid">
-        <div class="row row-sm">
+        <div class="row">
             <div class="col-lg-12 col-md-12">
 				<div class="card" id="basic-alert" style="margin-top: 25px">
 					<div class="card-body" style="padding: 0">
@@ -35,7 +35,7 @@
 				    </div>
 			    </div>
 		    </div>
-            <div class="panel-body tabs-menu-body main-content-body-right" style="padding-left: 10%; padding-right: 10%;">
+            <div class="panel-body tabs-menu-body main-content-body-right" style="padding-left: 10%; padding-right: 10%; width: 100%">
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
                         <div class="card">
