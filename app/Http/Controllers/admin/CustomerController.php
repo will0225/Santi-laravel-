@@ -48,13 +48,13 @@ class CustomerController extends Controller
     }
 
     function update(Request $request, $id) {
-        
         User::where('id', $id)->update([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'phone' => $request->phone,
             'email' => $request->email,
             'group_id' => $request->group,
+            'is_admin' => $request->admin
         ]);
 
         return redirect()->back()->with('message', 'Customer updated successfully!');

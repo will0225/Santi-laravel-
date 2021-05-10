@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container-fluid">
-        <div class="row row-sm">
+        <div class="row">
             <div class="col-lg-12 col-md-12">
 				<div class="card" id="basic-alert" style="margin-top: 25px">
 					<div class="card-body" style="padding: 0">
@@ -87,6 +87,20 @@
                                                 @foreach ($groups as $group)
                                                 <option value="{{$group->id}}" selected="{{$customer->group->id == $group->id?'true':'false'}}">{{$group->name}}</option>
                                                 @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-label">Role</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="admin" >
+                                                <option value="1" {{$customer->is_admin == '1'?'selected':''}}>Admin</option>
+                                                <option value="0" {{$customer->is_admin == '0'?'selected':''}}>Customer</option>
                                             </select>
                                         </div>
                                     </div>
