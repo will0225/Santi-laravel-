@@ -25,6 +25,7 @@ class CustomerController extends Controller
     function show($id) {
         $customer = User::where('id', $id)->get();
         $price = $customer[0]->group->price;
+        // dd($customer[0]->group);
         $groups = Group::get();
         $transactions = Transaction::where('receiver_id', $customer[0]->id)->get();
         if(count($customer[0]->balances)) {

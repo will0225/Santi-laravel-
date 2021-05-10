@@ -85,7 +85,7 @@
                                         <div class="col-md-9">
                                             <select class="form-control" name="group" >
                                                 @foreach ($groups as $group)
-                                                <option value="{{$group->id}}" selected="{{$customer->group->id == $group->id?'true':'false'}}">{{$group->name}}</option>
+                                                <option value="{{$group->id}}" {{$customer->group->id == $group->id?'selected':''}}>{{$group->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
